@@ -1,0 +1,57 @@
+<!-- menu.component.html -->
+<div class="min-h-[calc(100vh-4rem)] bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-6">
+        Consulta de Menú
+      </h2>
+      <div class="mb-6">
+        <label for="day-select" class="block text-sm font-medium text-gray-700 mb-1">
+          Selecciona un día:
+        </label>
+        <select id="day-select" [(ngModel)]="selectedDay"
+          class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] sm:text-sm rounded-md">
+          <option *ngFor="let day of days" [value]="day">{{day}}</option>
+        </select>
+      </div>
+      <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+        <div *ngFor="let mealType of ['Desayuno', 'Almuerzo', 'Cena']" class="px-4 py-5 sm:px-6 border-b border-gray-200">
+          <h3 class="text-lg leading-6 font-medium text-gray-900 mb-2">{{mealType}}</h3>
+          <ul class="mt-2 list-disc list-inside mb-4">
+            <li *ngFor="let item of selectedDayMenu[mealType].items" class="text-sm text-gray-500">{{item}}</li>
+          </ul>
+          <button (click)="showNutritionInfo(mealType)"
+            class="text-[#67b93e] border-[#67b93e] hover:bg-[#67b93e] hover:text-white px-3 py-2 rounded-md text-sm font-medium border">
+            Ver información nutricional
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="selectedMeal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" (click)="closeNutritionInfo()">
+    <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white" (click)="$event.stopPropagation()">
+      <div class="mt-3 text-center">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Información Nutricional - {{selectedMeal}}</h3>
+        <div class="mt-2 px-7 py-3">
+          <p class="text-sm text-gray-500">
+            Calorías: {{selectedDayMenu[selectedMeal].nutrition.calories}} kcal
+          </p>
+          <p class="text-sm text-gray-500">
+            Proteínas: {{selectedDayMenu[selectedMeal].nutrition.protein}}
+          </p>
+          <p class="text-sm text-gray-500">
+            Carbohidratos: {{selectedDayMenu[selectedMeal].nutrition.carbs}}
+          </p>
+          <p class="text-sm text-gray-500">
+            Grasas: {{selectedDayMenu[selectedMeal].nutrition.fat}}
+          </p>
+        </div>
+        <div class="items-center px-4 py-3">
+          <button (click)="closeNutritionInfo()"
+            class="px-4 py-2 bg-[#67b93e] text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

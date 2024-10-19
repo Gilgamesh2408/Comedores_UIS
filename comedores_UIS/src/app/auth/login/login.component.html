@@ -1,0 +1,36 @@
+<!-- login.component.html -->
+<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+      <div>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Iniciar Sesión
+        </h2>
+        <p class="mt-2 text-center text-sm text-gray-600">
+          Accede al servicio de comedor de la UIS
+        </p>
+      </div>
+      <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="rounded-md shadow-sm -space-y-px">
+          <div>
+            <label for="username" class="sr-only">Usuario</label>
+            <input id="username" formControlName="username" name="username" type="text" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm"
+              placeholder="Usuario">
+          </div>
+          <div>
+            <label for="password" class="sr-only">Contraseña</label>
+            <input id="password" formControlName="password" name="password" type="password" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm"
+              placeholder="Contraseña">
+          </div>
+        </div>
+  
+        <div>
+          <button type="submit"
+            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#67b93e] hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#67b93e]">
+            Iniciar Sesión
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

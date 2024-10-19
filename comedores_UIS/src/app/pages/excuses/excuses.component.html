@@ -1,0 +1,38 @@
+<!-- excuse.component.html -->
+<div class="min-h-[calc(100vh-4rem)] bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md mx-auto">
+      <h2 class="text-3xl font-extrabold text-gray-900 mb-6">
+        Registrar Excusa
+      </h2>
+      <form [formGroup]="excuseForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label for="studentId" class="block text-gray-700 text-sm font-bold mb-2">
+            Número de Estudiante
+          </label>
+          <input id="studentId" formControlName="studentId" type="text" placeholder="Ej. 2000123456" required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]">
+        </div>
+        <div class="mb-4">
+          <label for="date" class="block text-gray-700 text-sm font-bold mb-2">
+            Fecha de la Excusa
+          </label>
+          <input id="date" formControlName="date" type="date" required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]">
+        </div>
+        <div class="mb-6">
+          <label for="reason" class="block text-gray-700 text-sm font-bold mb-2">
+            Motivo de la Excusa
+          </label>
+          <textarea id="reason" formControlName="reason" placeholder="Explica brevemente el motivo de tu excusa" required
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]"
+            rows="4"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button type="submit"
+            class="bg-[#67b93e] hover:bg-[#5aa535] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Enviar Excusa
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
