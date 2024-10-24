@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import {ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-excuses',
   standalone: true,
-  imports: [FormBuilder,FormGroup],
+  imports: [ReactiveFormsModule],
   templateUrl: './excuses.component.html',
-  styleUrl: './excuses.component.css'
+  styleUrls: ['./excuses.component.css']
 })
 export class ExcusesComponent {
   excuseForm: FormGroup;
