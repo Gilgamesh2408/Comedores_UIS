@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apacite.bst
+Reallocating 'name_of_file' (item size: 1) to 15 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: mibibliografia.bib
+Warning--entry type for "UIS2024" isn't style-file defined
+--line 15 of file mibibliografia.bib
+Warning--entry type for "UIS_Carnet_Digital" isn't style-file defined
+--line 25 of file mibibliografia.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+You've used 2 entries,
+            6951 wiz_defined-function locations,
+            1282 strings with 10881 characters,
+and the built_in function-call counts, 3725 in all, are:
+= -- 534
+> -- 20
+< -- 144
++ -- 130
+- -- 6
+* -- 188
+:= -- 615
+add.period$ -- 8
+call.type$ -- 2
+change.case$ -- 42
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 66
+empty$ -- 141
+format.name$ -- 28
+if$ -- 761
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 0
+newline$ -- 47
+num.names$ -- 16
+pop$ -- 43
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 349
+stack$ -- 0
+substring$ -- 143
+swap$ -- 29
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 304
+warning$ -- 0
+while$ -- 18
+width$ -- 0
+write$ -- 50
+(There were 2 warnings)

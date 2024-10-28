@@ -1,0 +1,48 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Herrera%
+}{%
+Herrera%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+UIS2024}
+\APACinsertmetastar {%
+UIS2024}%
+\begin{APACrefauthors}%
+Herrera, S\BPBI M\BPBI V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{marzo}{4}.
+\newblock
+\APACrefbtitle {Coordinación de Servicios de Alimentación.} {Coordinación de
+  servicios de alimentación.}
+\newblock
+\begin{APACrefURL} \url{https://uis.edu.co/uis-comedores-es/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+UIS%
+}{%
+UIS%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+UIS_Carnet_Digital}
+\APACinsertmetastar {%
+UIS_Carnet_Digital}%
+\begin{APACrefauthors}%
+UIS.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{julio}{19}.
+\newblock
+\APACrefbtitle {Servicio de Carnet Digital.} {Servicio de carnet digital.}
+\newblock
+\begin{APACrefURL} \url{https://uis.edu.co/app-uis-es/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
