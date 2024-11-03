@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.menus;
+package com.uis.ComedoresUIS.models.menus;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Entity
 @Data
 @AllArgsConstructor
-public class FoodCategoryEntity {
+public class FoodCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.students;
+package com.uis.ComedoresUIS.models.students;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class JustificationEntity {
+public class Justification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +29,6 @@ public class JustificationEntity {
     private String description;
     @ManyToOne
     @JoinColumn(name = "id_student")
-    private StudentEntity student;
+    private Student student;
 
 }

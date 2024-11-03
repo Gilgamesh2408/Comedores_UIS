@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.admins;
+package com.uis.ComedoresUIS.models.admins;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
-public class DateEntity {
+public class Date {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +26,6 @@ public class DateEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_period")
-    private PeriodEntity period;
+    private Period period;
 
 }

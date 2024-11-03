@@ -1,18 +1,16 @@
-package com.uis.ComedoresUIS.entities.menus;
+package com.uis.ComedoresUIS.models.menus;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Data
 @AllArgsConstructor
-public class TypeMealEntity {
+@NoArgsConstructor
+public class TypeMeal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

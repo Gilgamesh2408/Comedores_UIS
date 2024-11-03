@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.students;
+package com.uis.ComedoresUIS.models.students;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentEntity {
+public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,7 +32,7 @@ public class StudentEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_services")
-    private AccessToServiceEntity access;
+    private AccessToService access;
 
 
 }

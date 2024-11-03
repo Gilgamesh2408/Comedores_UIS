@@ -1,7 +1,7 @@
-package com.uis.ComedoresUIS.entities.menus;
+package com.uis.ComedoresUIS.models.menus;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.uis.ComedoresUIS.entities.admins.AdministratorEntity;
+import com.uis.ComedoresUIS.models.admins.Administrator;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuProgrammingEntity {
+public class MenuProgramming {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,13 +23,13 @@ public class MenuProgrammingEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_amin")
-    private AdministratorEntity admin;
+    private Administrator admin;
     @OneToOne
     @JoinColumn(name = "id_type")
-    private TypeMealEntity typeMeal;
+    private TypeMeal typeMeal;
     @ManyToOne
     @JoinColumn(name = "id_meal")
-    private MealEntity meal;
+    private Meal meal;
 
 
 }

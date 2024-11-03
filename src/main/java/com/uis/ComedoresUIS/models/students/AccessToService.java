@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.students;
+package com.uis.ComedoresUIS.models.students;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AccessToServiceEntity {
+public class AccessToService {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

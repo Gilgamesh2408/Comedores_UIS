@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.menus;
+package com.uis.ComedoresUIS.models.menus;
 
 import jakarta.persistence.*;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import lombok.AccessLevel;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class IngredientEntity {
+public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +26,6 @@ public class IngredientEntity {
 
     @ManyToOne
     @JoinColumn(name = "id_category")
-    private FoodCategoryEntity foodCategory;
+    private FoodCategory foodCategory;
 
 }

@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.admins;
+package com.uis.ComedoresUIS.models.admins;
 
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
@@ -15,7 +15,7 @@ import lombok.AccessLevel;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdministratorEntity {
+public class Administrator {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

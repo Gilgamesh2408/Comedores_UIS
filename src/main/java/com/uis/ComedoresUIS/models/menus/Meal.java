@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.entities.menus;
+package com.uis.ComedoresUIS.models.menus;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,7 +7,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MealEntity {
+public class Meal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
