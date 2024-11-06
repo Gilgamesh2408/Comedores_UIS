@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'excuse', component: ExcusesComponent },
-  {path: '', component:LayoutComponent},
-  {path: '', component:FooterComponent}
+  {path: 'layout', component:LayoutComponent},
+  {path: 'footer', component:FooterComponent}
 ];
 

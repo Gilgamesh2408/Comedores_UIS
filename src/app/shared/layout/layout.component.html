@@ -1,56 +1,57 @@
-<!-- layout.component.html -->
-<div class="min-h-screen bg-gray-100">
-    <nav class="bg-[#67b93e] shadow-lg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex items-center">
-            <a routerLink="/" class="flex-shrink-0">
-              <img class="h-8 w-auto" src="/assets/logo-uis.png" alt="UIS Logo">
-            </a>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
-                  Consultar Menú
-                </a>
-                <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
-                  Registrar Excusa
-                </a>
-              </div>
-            </div>
-          </div>
+<!-- layout.component.html --> 
+
+  <nav class="bg-[#67b93e] shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a routerLink="/" class="flex-shrink-0">
+            <img class="h-8 w-auto" src="./assets/logo-uis.jpg" alt="UIS Logo">
+          </a>
           <div class="hidden md:block">
-            <div class="ml-4 flex items-center md:ml-6">
-              <a routerLink="/login" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
-                Iniciar Sesión
+            <div class="ml-10 flex items-baseline space-x-4">
+              <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
+                Consultar Menú 
+              </a>
+              <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
+                Registrar Excusa
               </a>
             </div>
           </div>
-          <div class="-mr-2 flex md:hidden">
-            <button (click)="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#67b93e] focus:ring-white">
-              <span class="sr-only">Open main menu</span>
-              <svg *ngIf="!isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-              <svg *ngIf="isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-4 flex items-center md:ml-6">
+            <a routerLink="/login" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
+              Iniciar Sesión
+            </a>
           </div>
         </div>
-      </div>
-  
-      <div *ngIf="isMenuOpen" class="md:hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
-            Consultar Menú
-          </a>
-          <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
-            Registrar Excusa
-          </a>
-          <a routerLink="/login" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
-            Iniciar Sesión
-          </a>
+        <div class="-mr-2 flex md:hidden">
+          <button (click)="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#67b93e] focus:ring-white">
+            <span class="sr-only">Open main menu</span>
+            <svg *ngIf="!isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg *ngIf="isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
       </div>
-    </nav>
-  </div>
+    </div>
+
+    <div *ngIf="isMenuOpen" class="md:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+          Consultar Menú
+        </a>
+        <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+          Registrar Excusa
+        </a>
+        <a routerLink="/login" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+          Iniciar Sesión
+        </a>
+      </div>
+    </div>
+  </nav>
+
+ 

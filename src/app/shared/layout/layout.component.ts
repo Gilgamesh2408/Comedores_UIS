@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from '../../pages/menu/menu.component';
+import { RouterEvent, RouterLink, RouterLinkActive } from '@angular/router';
 
-@Component({
+@Component({ 
   selector: 'app-layout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MenuComponent,RouterLink,RouterLinkActive],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

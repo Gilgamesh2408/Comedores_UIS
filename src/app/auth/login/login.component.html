@@ -1,6 +1,6 @@
 <!-- login.component.html -->
-<div class="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-md w-full space-y-8">
+<div class="min-h-[calc(92vh-4rem)] flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-4">
       <div>
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
           Iniciar Sesión
@@ -9,7 +9,7 @@
           Accede al servicio de comedor de la UIS
         </p>
       </div>
-      <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <form class="mt-8 space-y-6" formGroup="loginForm" (ngSubmit)="onSubmit()">
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="username" class="sr-only">Usuario</label>
