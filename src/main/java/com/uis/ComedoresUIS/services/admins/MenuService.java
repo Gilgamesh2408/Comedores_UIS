@@ -11,7 +11,9 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
 @Service
@@ -35,9 +37,12 @@ public class MenuService {
         menuProgrammingRepository.deleteById(id);
     }
 
-    public List<MenuProgramming> getMenusByDay(LocalDate date) {
+    public List<MenuProgramming> getMenuByDay(String date) {
+        LocalDate today = LocalDate.now();
+        date = date.toUpperCase();
+        LocalDate day = today.with(TemporalAdjusters.previousOrSame(DayOfWeek.valueOf(date)));
         return menuProgrammingRepository.findAll().stream().filter(
-                menu -> menu.getDate().getDayOfWeek().equals(date.getDayOfWeek()))
+                menu -> menu.getDate().getDayOfMonth() == day.getDayOfMonth())
                 .toList();
     }
 
