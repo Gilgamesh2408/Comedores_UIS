@@ -3,6 +3,7 @@ package com.uis.ComedoresUIS.services.admins;
 import com.uis.ComedoresUIS.models.admins.Administrator;
 import com.uis.ComedoresUIS.models.admins.Date;
 import com.uis.ComedoresUIS.models.admins.Period;
+import com.uis.ComedoresUIS.models.menus.DTO.MenuProgrammingDTO;
 import com.uis.ComedoresUIS.models.menus.Meal;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.models.menus.TypeMeal;
@@ -42,17 +43,22 @@ public class AdministratorService {
     }
 
     @Transactional
-    public MenuProgramming createMenuProgramming(LocalDate date, Long idAdmin, Long idTypeMeal, Long idMeal) {
-        Administrator admin = adminRepository.findById(idAdmin).
+    public MenuProgramming createMenuProgramming(MenuProgrammingDTO menu) {
+        Administrator admin = adminRepository.findById(menu.getAdmin()).
                 orElseThrow(() -> new EntityNotFoundException("Admin not Found"));
 
-        TypeMeal typeMeal = menuService.getTypeMealByID(idTypeMeal);
+        TypeMeal typeMeal = menuService.getTypeMealById(menu.getTypeMeal());
 
-        Meal meal = menuService.getMealById(idMeal);
+        Meal meal = menuService.getMealById(menu.getMeal());
 
-        MenuProgramming menu = new MenuProgramming(null, date, admin, typeMeal, meal);
+        MenuProgramming menuProgramming = MenuProgramming.builder()
+                .date(menu.getDate())
+                .admin(admin)
+                .typeMeal(typeMeal)
+                .meal(meal)
+                .build();
 
-        return menuService.createMenuProgramming(menu);
+        return menuService.createMenuProgramming(menuProgramming);
     }
 
     public Meal createMeal(String mainCourse, String soup, String drink, String dessert) {

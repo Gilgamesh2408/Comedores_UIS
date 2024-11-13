@@ -50,7 +50,7 @@ public class MenuService {
         return typeMealRepository.save(typeMeal);
     }
 
-    protected TypeMeal getTypeMealByID(Long id) {
+    protected TypeMeal getTypeMealById(Long id) {
         return typeMealRepository.findById(id).
                 orElseThrow(() -> new EntityNotFoundException("TypeMeal not Found"));
     }

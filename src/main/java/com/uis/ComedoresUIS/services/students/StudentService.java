@@ -1,6 +1,7 @@
 package com.uis.ComedoresUIS.services.students;
 
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
+import com.uis.ComedoresUIS.models.students.JustificationDTO;
 import com.uis.ComedoresUIS.services.admins.MenuService;
 import com.uis.ComedoresUIS.models.students.Justification;
 import com.uis.ComedoresUIS.models.students.Student;
@@ -10,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityNotFoundException;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -28,14 +28,31 @@ public class StudentService {
         return menuService.getMenuByDay(day);
     }
 
-    public Justification createJustification(
-            Boolean type, LocalDate dateInit, LocalDate dateEnd, String description, Long idStudent
-    ) {
-        Student student = studentRepository.findById(idStudent)
-                .orElseThrow(() -> new EntityNotFoundException("Not found Student"));
+    public Justification createJustification(JustificationDTO justificationDTO) {
 
-        Justification justification = new Justification(null, type, dateInit, dateEnd, description, student);
+        Student student = studentRepository.findById(justificationDTO.getStudent())
+                .orElseThrow(() -> new EntityNotFoundException("Student noy Found"));
+
+        Justification justification = Justification.builder()
+                .student(student)
+                .type(justificationDTO.getType())
+                .description(justificationDTO.getDescription())
+                .dateInit(justificationDTO.getDateInit())
+                .dateEnd(justificationDTO.getDateEnd())
+                .build();
+
         return justificationService.createJustification(justification);
+    }
+
+    public List<Justification> getAllJustificationsByStudent(Long idStudent) {
+        Student student = studentRepository.findById(idStudent)
+                .orElseThrow(() -> new EntityNotFoundException("Student not Found"));
+
+        return justificationService.getAllJustificationsByStudent(student);
+    }
+
+    public void deleteJustificationById(Long idJustification) {
+        justificationService.deleteJustificationById(idJustification);
     }
 
 }

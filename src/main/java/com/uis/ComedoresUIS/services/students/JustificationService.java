@@ -6,7 +6,7 @@ import com.uis.ComedoresUIS.repositories.students.JustificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.util.List;
 
 @Service
 public class JustificationService {
@@ -18,5 +18,12 @@ public class JustificationService {
         return justificationRepository.save(justification);
     }
 
+    public void deleteJustificationById(Long idJustification) {
+        justificationRepository.deleteById(idJustification);
+    }
+
+    public List<Justification> getAllJustificationsByStudent(Student student) {
+        return justificationRepository.findAllJustificationsByStudent(student);
+    }
 
 }
