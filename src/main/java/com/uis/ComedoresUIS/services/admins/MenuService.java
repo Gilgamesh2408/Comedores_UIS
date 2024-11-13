@@ -3,7 +3,6 @@ package com.uis.ComedoresUIS.services.admins;
 import com.uis.ComedoresUIS.models.menus.Meal;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.models.menus.TypeMeal;
-import com.uis.ComedoresUIS.repositories.menus.MealIngredientRepository;
 import com.uis.ComedoresUIS.repositories.menus.MealRepository;
 import com.uis.ComedoresUIS.repositories.menus.MenuProgrammingRepository;
 import com.uis.ComedoresUIS.repositories.menus.TypeMealRepository;
@@ -25,8 +24,6 @@ public class MenuService {
     private TypeMealRepository typeMealRepository;
     @Autowired
     private MealRepository mealRepository;
-    @Autowired
-    private MealIngredientRepository mealIngredientRepository;
 
     //CRUD for MenuProgramming
     public MenuProgramming createMenuProgramming(MenuProgramming menu) {

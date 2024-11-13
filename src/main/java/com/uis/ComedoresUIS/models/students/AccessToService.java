@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class AccessToService {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Boolean breakfast;
     private Boolean lunch;

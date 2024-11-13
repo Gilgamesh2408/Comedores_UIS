@@ -1,7 +1,7 @@
 package com.uis.ComedoresUIS.controllers.admins;
 
 import com.uis.ComedoresUIS.models.admins.Period;
-import com.uis.ComedoresUIS.models.menus.DTO.MenuProgrammingDTO;
+import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.services.admins.AdministratorService;
 import org.springframework.beans.factory.annotation.Autowired;

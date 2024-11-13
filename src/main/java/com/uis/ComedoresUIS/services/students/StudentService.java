@@ -1,7 +1,7 @@
 package com.uis.ComedoresUIS.services.students;
 
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
-import com.uis.ComedoresUIS.models.students.JustificationDTO;
+import com.uis.ComedoresUIS.models.students.dto.JustificationDTO;
 import com.uis.ComedoresUIS.services.admins.MenuService;
 import com.uis.ComedoresUIS.models.students.Justification;
 import com.uis.ComedoresUIS.models.students.Student;

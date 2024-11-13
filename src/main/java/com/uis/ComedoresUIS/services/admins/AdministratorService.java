@@ -3,7 +3,7 @@ package com.uis.ComedoresUIS.services.admins;
 import com.uis.ComedoresUIS.models.admins.Administrator;
 import com.uis.ComedoresUIS.models.admins.Date;
 import com.uis.ComedoresUIS.models.admins.Period;
-import com.uis.ComedoresUIS.models.menus.DTO.MenuProgrammingDTO;
+import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
 import com.uis.ComedoresUIS.models.menus.Meal;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.models.menus.TypeMeal;
@@ -15,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -61,8 +60,7 @@ public class AdministratorService {
         return menuService.createMenuProgramming(menuProgramming);
     }
 
-    public Meal createMeal(String mainCourse, String soup, String drink, String dessert) {
-        Meal meal = new Meal(null, mainCourse, soup, drink, dessert);
+    public Meal createMeal(Meal meal) {
         return menuService.createMeal(meal);
     }
 

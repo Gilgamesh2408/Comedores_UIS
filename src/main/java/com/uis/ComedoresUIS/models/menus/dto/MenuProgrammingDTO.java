@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.models.menus.DTO;
+package com.uis.ComedoresUIS.models.menus.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

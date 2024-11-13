@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class Justification {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Boolean type;

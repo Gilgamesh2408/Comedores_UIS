@@ -1,4 +1,4 @@
-package com.uis.ComedoresUIS.models.students;
+package com.uis.ComedoresUIS.models.students.dto;
 
 import lombok.Setter;
 import lombok.Getter;
