@@ -6,19 +6,58 @@
       </h2>
       <form [formGroup]="excuseForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
-          <label for="studentId" class="block text-gray-700 text-sm font-bold mb-2">
-            Número de Estudiante
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Tipo de Excusa
           </label>
-          <input id="studentId" formControlName="studentId" type="text" placeholder="Ej. 2000123456" required
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]">
+          <div class="flex items-center">
+            <label class="mr-4">
+              <input type="radio" formControlName="excuseType" value="permanente" required
+                class="mr-2 leading-tight">
+              Permanente
+            </label>
+            <label>
+              <input type="radio" formControlName="excuseType" value="esporadica" required
+                class="mr-2 leading-tight">
+              Esporádica
+            </label>
+          </div>
         </div>
         <div class="mb-4">
-          <label for="date" class="block text-gray-700 text-sm font-bold mb-2">
-            Fecha de la Excusa
+          <label class="block text-gray-700 text-sm font-bold mb-2">
+            Comida
           </label>
-          <input id="date" formControlName="date" type="date" required
+          <div class="flex items-center">
+            <label class="mr-4">
+              <input type="checkbox" formControlName="excuseClass" value="permanente" required
+                class="mr-2 leading-tight">
+              Desayuno
+            </label>
+            <label>
+              <input type="checkbox" formControlName="excuseClass" value="esporadica" required
+                class="mr-2 leading-tight">
+              Almuerzo
+            </label>
+            <label>
+              <input type="checkbox" formControlName="excuseClass" value="esporadica" required
+                class="mr-2 leading-tight">
+              Comida
+            </label>
+          </div>
+        </div>          
+        <div class="mb-4">
+          <label for="date" class="block text-gray-700 text-sm font-bold mb-2">
+            Fecha inicio Excusa
+          </label>
+          <input id="date" formControlName="date1" type="date" required
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]">
-        </div>
+          </div>
+          <div class="mb-4">
+            <label for="date" class="block text-gray-700 text-sm font-bold mb-2">
+              Fecha final Excusa
+            </label>
+            <input id="date" formControlName="date2" type="date" required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-[#67b93e]">
+            </div>
         <div class="mb-6">
           <label for="reason" class="block text-gray-700 text-sm font-bold mb-2">
             Motivo de la Excusa
@@ -28,7 +67,7 @@
             rows="4"></textarea>
         </div>
         <div class="flex items-center justify-between">
-          <button type="submit"
+          <button type="onSubmit"
             class="bg-[#67b93e] hover:bg-[#5aa535] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Enviar Excusa
           </button>

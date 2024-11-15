@@ -14,8 +14,10 @@ export class ExcusesComponent {
 
   constructor(private fb: FormBuilder) {
     this.excuseForm = this.fb.group({
-      studentId: ['', Validators.required],
-      date: ['', Validators.required],
+      excuseType: ['', Validators.required],
+      excuseClass: ['', Validators.required],
+      date1: ['', Validators.required],
+      date2: ['', Validators.required],
       reason: ['', Validators.required]
     });
   }
@@ -23,6 +25,10 @@ export class ExcusesComponent {
   onSubmit() {
     if (this.excuseForm.valid) {
       console.log('Excuse submitted:', this.excuseForm.value);
+      // Here you would typically handle the excuse submission logic
+    }
+    if (this.excuseForm.invalid) {
+      console.log('Excuse not submitted:', this.excuseForm.value);
       // Here you would typically handle the excuse submission logic
     }
   }
