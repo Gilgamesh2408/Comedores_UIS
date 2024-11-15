@@ -18,7 +18,7 @@
 \affiliation{Universidad Industrial de Santander}
 \course{F1: Ingeniería del Software I}
 \professor{Emilio Cárcamo}
-\duedate{02 de Octubre de 2024}
+\duedate{15 de noviembre de 2024}
 \begin{document}
 \maketitle
 
@@ -257,16 +257,33 @@ Otra problemática significativa es el proceso de trámite de excusas por inasis
 	\end{itemize}
 \end{itemize}
 
-
 \newpage
+
 \subsection{Diagramas de Clase}
+
+\begin{figure}[H]
+	\caption[]{Diagrama de Clases del Aplicativo}
+	\label{Diagrama de Clases del Aplicativo}
+	\includegraphics[width=1\linewidth]{Diagramas/Diagrama de Clases.jpg}
+\end{figure}
 
 \subsection{Diagramas de Uso}
 
+\begin{figure}[H]
+	\caption[]{Diagrama de Usos del Aplicativo}
+	\label{Diagrama de Usos del Aplicativo}
+	\includegraphics[width=1\linewidth]{Diagramas/Diagrama de Usos.jpg}
+\end{figure}
 
 \section{Proceso}
 
 \subsection{Reporte SCRUM}
+
+\begin{figure}[H]
+	\caption[]{Reporte SCRUM en Jira del Proyecto}
+	\label{Reporte SCRUM en Jira del Proyecto}
+	\includegraphics[width=1\linewidth]{Diagramas/Reporte SCRUM.png}
+\end{figure}
 
 \subsection{Estándares de Ingeniería Usados}
 
@@ -311,13 +328,90 @@ Otra problemática significativa es el proceso de trámite de excusas por inasis
 
 \subsection{Selección de Herramientas}
 
+\begin{itemize}
+	\item \textbf{Para el Trabajo Colaborativo:}
+	
+	\begin{itemize}
+		\item \textbf{GitHub:} Es un portal creado para alojar el código de las aplicaciones de cualquier desarrollador, y que fue comprada por Microsoft en junio del 2018. La plataforma está creada para que los desarrolladores suban el código de sus aplicaciones y herramientas, y que como usuario no sólo puedas descargarte la aplicación, sino también entrar a su perfil para leer sobre ella o colaborar con su desarrollo \cite{xatakaGithub}.
+		
+		\item \textbf{Google Meet:} Es un servicio de reuniones virtuales desarrollado por Google. Anteriormente era conocido como Hangouts Meet, pero desde 2017, con su lanzamiento oficial, adoptó el nombre por el cual se le conoce hoy en día. Esta plataforma funciona en diferentes dispositivos y su propósito principal es comunicar genuinamente a un grupo de personas que se encuentran en diferentes puntos geográficos, a través de videollamadas de alta calidad \cite{hubspotGoogleMeet}.
+		
+		\item \textbf{Jira:} Es una aplicación web que con el tiempo se ha convertido en el estándar del mercado en las áreas de gestión de proyectos, gestión de tareas y gestión de errores. Especialmente para el desarrollo de software, Jira es una excelente herramienta que puede facilitar los pasos de trabajo y la cooperación tanto de equipos pequeños como grandes \cite{ionosJira}.
+		
+	\end{itemize}
+	
+	\item \textbf{Para el Frontend:}
+	
+	\begin{itemize}
+		
+		\item \textbf{Angular:} Es un framework de ingeniería de software de código abierto que se utiliza para crear aplicaciones web de una sola página. Los desarrolladores también lo utilizan para crear menús animados para páginas web HTML \cite{hostingerAngular}.
+		
+		\item \textbf{Bootstrap:} Es un framework front-end utilizado para desarrollar aplicaciones web y sitios mobile first, o sea, con un layout que se adapta a la pantalla del dispositivo utilizado por el usuario \cite{rockcontent-bootstrap}.
+		
+	\end{itemize}
+	
+	\item \textbf{Para el Backend:}
+	
+	\begin{itemize}
+		\item \textbf{Java con SpringBoot:} 
+		Java es un lenguaje de programación orientado a objetos y de propósito general, mientras que Spring Boot es un marco de trabajo que simplifica la configuración y el despliegue de aplicaciones Java, permitiendo crear aplicaciones autónomas y listas para producción con menos configuración manual. Spring Boot se basa en el framework Spring, brindando funcionalidades para el desarrollo de aplicaciones empresariales \cite{ibmSpringBoot}.
+		
+		\item \textbf{PostgreSQL:} 
+		Es un sistema de gestión de bases de datos objeto-relacional (ORDBMS) de código abierto. Combina la potencia de las bases de datos relacionales con la flexibilidad de la programación orientada a objetos \cite{datacampPostgreSQL}.	
+	\end{itemize}
+	
+\end{itemize}
 
 \section{Solución}
 
 \subsection{Arquitectura de la Solución}
 
+\begin{figure}[H]
+	\caption[]{Funcionamiento del Aplicativo}
+	\label{Funcionamiento del Aplicativo}
+	\includegraphics[width=1\linewidth]{Prototipo/../Diagramas/Diagrama Solucion.png}
+\end{figure}
+
 \subsection{Resultado del Desarrollo}
 
+\begin{figure}[H]
+	\caption[]{Interfaz para el Ingreso de los Usuarios}
+	\label{Interfaz para el Ingreso de los Usuarios}
+	\includegraphics[width=1\linewidth]{Prototipo/Frontend_01.jpg}
+\end{figure}
+
+Aquí no hay ninguna opción para registrarse debido a que únicamente tendrán acceso el personal encargado del servicio de comedores y los estudiantes beneficiarios, cuyo registro se hace directamente desde la administración.
+
+\begin{figure}[H]
+	\caption[]{Interfaz para Consultar los Menús Diarios}
+	\label{Interfaz para Consultar los Menús Diarios}
+	\includegraphics[width=1\linewidth]{Prototipo/Frontend_02.jpg}
+\end{figure}
+
+En este apartado, los estudiantes pueden seleccionar de la lista desplegable el día de la semana del cual quieren conocer los menús y consultar la información nutricional.
+
+\begin{figure}[H]
+	\caption[]{Interfaz para Mostrar la Información Nutricional}
+	\label{Interfaz para Mostrar la Información Nutricional}
+	\includegraphics[width=1\linewidth]{Prototipo/Frontend_03.jpg}
+\end{figure}
+
+Como se aprecia en la Figura \ref{Interfaz para Mostrar la Información Nutricional}, la información nutricional incluye los datos de mayor interés que serían:
+
+\begin{itemize}
+	\item Calorías.
+	\item Proteínas.
+	\item Carbohidratos.
+	\item Grasas.
+\end{itemize} 
+
+\begin{figure}[H]
+	\caption[]{Interfaz para Realizar el Registro de Excusas}
+	\label{Interfaz para Mostrar la Información Nutricional}
+	\includegraphics[width=1\linewidth]{Prototipo/Frontend_04.jpg}
+\end{figure}
+
+Los estudiantes pueden seleccionar las fechas que abarca su excusa y detallar el motivo por el cual no van a asistir al servicio. Además, eligen si el tipo de excusa es permanente o esporádica.
 
 \section{Evaluación}
 

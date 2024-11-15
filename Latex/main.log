@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  28 OCT 2024 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.9.22)  15 NOV 2024 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -771,6 +771,11 @@ LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 LaTeX Info: Redefining \. on input line 13.
 LaTeX Info: Redefining \% on input line 13.
+
+
+LaTeX Warning: Label `Interfaz para Mostrar la Información Nutricional' multip
+ly defined.
+
 )
 \openout1 = `main.aux'.
 
@@ -793,8 +798,7 @@ LaTeX Font Info:    ... okay on input line 22.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
 \c@maskedRefs=\count334
-
-(C:\Users\Rodyster\AppData\Roaming\MiKTeX\tex/latex/apacite\spanish.apc
+ (C:\Users\Rodyster\AppData\Roaming\MiKTeX\tex/latex/apacite\spanish.apc
 File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
 LaTeX Info: Redefining \BHBI on input line 139.
@@ -1125,18 +1129,82 @@ o Funcionales/11. Requerimiento No Funcional.png (PNG copy)>]
 [12]
 
 [13]
+<Diagramas/Diagrama de Clases.jpg, id=231, 743.77875pt x 647.41875pt>
+File: Diagramas/Diagrama de Clases.jpg Graphic file (type jpg)
+<use Diagramas/Diagrama de Clases.jpg>
+Package pdftex.def Info: Diagramas/Diagrama de Clases.jpg  used on input line 2
+67.
+(pdftex.def)             Requested size: 469.75502pt x 408.90337pt.
+<Diagramas/Diagrama de Usos.jpg, id=232, 1047.915pt x 757.83125pt>
+File: Diagramas/Diagrama de Usos.jpg Graphic file (type jpg)
+<use Diagramas/Diagrama de Usos.jpg>
+Package pdftex.def Info: Diagramas/Diagrama de Usos.jpg  used on input line 275
+.
+(pdftex.def)             Requested size: 469.75502pt x 339.71423pt.
 
-[14]
 
-[15] (main.bbl
+[14 <./Diagramas/Diagrama de Clases.jpg>]
+<Diagramas/Reporte SCRUM.png, id=238, 963.6pt x 542.025pt>
+File: Diagramas/Reporte SCRUM.png Graphic file (type png)
+<use Diagramas/Reporte SCRUM.png>
+Package pdftex.def Info: Diagramas/Reporte SCRUM.png  used on input line 285.
+(pdftex.def)             Requested size: 469.75502pt x 264.23819pt.
+
+
+[15 <./Diagramas/Diagrama de Usos.jpg>]
+
+[16 <./Diagramas/Reporte SCRUM.png (PNG copy)>]
+
+[17]
+
+[18]
+<Prototipo/../Diagramas/Diagrama Solucion.png, id=276, 490.33188pt x 205.76875p
+t>
+File: Prototipo/../Diagramas/Diagrama Solucion.png Graphic file (type png)
+<use Prototipo/../Diagramas/Diagrama Solucion.png>
+Package pdftex.def Info: Prototipo/../Diagramas/Diagrama Solucion.png  used on 
+input line 372.
+(pdftex.def)             Requested size: 469.75502pt x 197.14012pt.
+<Prototipo/Frontend_01.jpg, id=277, 1284.8pt x 575.14874pt>
+File: Prototipo/Frontend_01.jpg Graphic file (type jpg)
+<use Prototipo/Frontend_01.jpg>
+Package pdftex.def Info: Prototipo/Frontend_01.jpg  used on input line 380.
+(pdftex.def)             Requested size: 469.75502pt x 210.28297pt.
+
+
+[19 <./Prototipo/../Diagramas/Diagrama Solucion.png (PNG copy)>]
+<Prototipo/Frontend_02.jpg, id=286, 1284.8pt x 575.14874pt>
+File: Prototipo/Frontend_02.jpg Graphic file (type jpg)
+<use Prototipo/Frontend_02.jpg>
+Package pdftex.def Info: Prototipo/Frontend_02.jpg  used on input line 388.
+(pdftex.def)             Requested size: 469.75502pt x 210.28297pt.
+
+
+[20 <./Prototipo/Frontend_01.jpg> <./Prototipo/Frontend_02.jpg>]
+<Prototipo/Frontend_03.jpg, id=293, 586.19pt x 421.575pt>
+File: Prototipo/Frontend_03.jpg Graphic file (type jpg)
+<use Prototipo/Frontend_03.jpg>
+Package pdftex.def Info: Prototipo/Frontend_03.jpg  used on input line 396.
+(pdftex.def)             Requested size: 469.75502pt x 337.83296pt.
+<Prototipo/Frontend_04.jpg, id=295, 1284.8pt x 584.1825pt>
+File: Prototipo/Frontend_04.jpg Graphic file (type jpg)
+<use Prototipo/Frontend_04.jpg>
+Package pdftex.def Info: Prototipo/Frontend_04.jpg  used on input line 411.
+(pdftex.def)             Requested size: 469.75502pt x 213.58585pt.
+
+
+[21 <./Prototipo/Frontend_03.jpg>]
+
+[22 <./Prototipo/Frontend_04.jpg>] (main.bbl
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-3.
- (C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
+5.
+
+(C:\Program Files\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ))
 AED endfloat: Processing end Figures and Tables
 
-[16
+[23
 
 ] (main.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -1148,14 +1216,18 @@ LaTeX Info: Redefining \% on input line 13.
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EC0040018174E7AFA1B4D879873E58F6;3609.
+(rerunfilecheck)             Checksum: 8B4C5A0FF999707FB512086296065834;3609.
  ) 
 Here is how much of TeX's memory you used:
- 25664 strings out of 473899
- 476936 string characters out of 5736306
- 1935960 words of memory out of 5000000
- 48030 multiletter control sequences out of 15000+600000
+ 25777 strings out of 473899
+ 480064 string characters out of 5736306
+ 1937960 words of memory out of 5000000
+ 48121 multiletter control sequences out of 15000+600000
  600043 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,107p,1018b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1163,9 +1235,9 @@ Here is how much of TeX's memory you used:
 iKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Program Files/MiKTeX/fonts/type1/pu
 blic/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:
 /Program Files/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (18 pages, 1141935 bytes).
+Output written on main.pdf (25 pages, 1695932 bytes).
 PDF statistics:
- 288 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 327 words of extra memory for PDF output out of 10000 (max. 10000000)
 

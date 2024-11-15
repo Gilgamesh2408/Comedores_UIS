@@ -1,6 +1,85 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+{DataCamp}%
+}{%
+{DataCamp}%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+datacampPostgreSQL}
+\APACinsertmetastar {%
+datacampPostgreSQL}%
+\begin{APACrefauthors}%
+{DataCamp}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {¿Qué es PostgreSQL? Cómo funciona, casos prácticos y
+  recursos.} {¿qué es postgresql? cómo funciona, casos prácticos y
+  recursos.}
+\newblock
+\APAChowpublished
+  {\url{https://www.datacamp.com/es/blog/what-is-postgresql-introduction}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Equipo editorial de IONOS}%
+}{%
+{Equipo editorial de IONOS}%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+ionosJira}
+\APACinsertmetastar {%
+ionosJira}%
+\begin{APACrefauthors}%
+{Equipo editorial de IONOS}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {¿Qué es Jira?} {¿qué es jira?}
+\newblock
+\APAChowpublished
+  {\url{https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/que-es-jira/}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fernández%
+}{%
+Fernández%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+xatakaGithub}
+\APACinsertmetastar {%
+xatakaGithub}%
+\begin{APACrefauthors}%
+Fernández, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {¿Qué es GitHub, qué es y qué le ofrece a los
+  desarrolladores?} {¿qué es github, qué es y qué le ofrece a los
+  desarrolladores?}
+\newblock
+\APAChowpublished
+  {\url{https://www.xataka.com/basics/que-github-que-que-le-ofrece-a-desarrolladores}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Herrera%
 }{%
 Herrera%
@@ -21,6 +100,104 @@ Herrera, S\BPBI M\BPBI V.%
   servicios de alimentación.}
 \newblock
 \begin{APACrefURL} \url{https://uis.edu.co/uis-comedores-es/} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Hostinger}%
+}{%
+{Hostinger}%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+hostingerAngular}
+\APACinsertmetastar {%
+hostingerAngular}%
+\begin{APACrefauthors}%
+{Hostinger}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {¿Qué es Angular?} {¿qué es angular?}
+\newblock
+\APAChowpublished {\url{https://www.hostinger.es/tutoriales/que-es-angular}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{IBM}%
+}{%
+{IBM}%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+ibmSpringBoot}
+\APACinsertmetastar {%
+ibmSpringBoot}%
+\begin{APACrefauthors}%
+{IBM}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Java con Spring Boot.} {Java con spring boot.}
+\newblock
+\APAChowpublished {\url{https://www.ibm.com/es-es/topics/java-spring-boot}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+RockContent%
+}{%
+RockContent%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+rockcontent-bootstrap}
+\APACinsertmetastar {%
+rockcontent-bootstrap}%
+\begin{APACrefauthors}%
+RockContent.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Blog sobre Bootstrap.} {Blog sobre bootstrap.}
+\newblock
+\begin{APACrefURL} \url{https://rockcontent.com/es/blog/bootstrap/}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Accedido: noviembre de 2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Terreros%
+}{%
+Terreros%
+}{%
+{\protect \APACyear {2024}}%
+}]{%
+hubspotGoogleMeet}
+\APACinsertmetastar {%
+hubspotGoogleMeet}%
+\begin{APACrefauthors}%
+Terreros, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2024}{}{}.
+\newblock
+\APACrefbtitle {Cómo usar Google Meet.} {Cómo usar google meet.}
+\newblock
+\APAChowpublished
+  {\url{https://blog.hubspot.es/marketing/como-usar-google-meet}}.
+\newblock
+\APACrefnote{Consultado: 14 de noviembre de 2024}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

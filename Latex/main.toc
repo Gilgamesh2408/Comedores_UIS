@@ -8,18 +8,18 @@
 \contentsline {subsection}{Requerimientos de Nivel de Usuario}{10}{section*.25}%
 \contentsline {subsection}{Restricciones}{11}{section*.26}%
 \contentsline {subsection}{Diagramas de Clase}{14}{section*.27}%
-\contentsline {subsection}{Diagramas de Uso}{14}{section*.28}%
-\contentsline {section}{Proceso}{14}{section*.29}%
-\contentsline {subsection}{Reporte SCRUM}{14}{section*.30}%
-\contentsline {subsection}{Estándares de Ingeniería Usados}{14}{section*.31}%
-\contentsline {subsection}{Selección de Herramientas}{15}{section*.32}%
-\contentsline {section}{Solución}{15}{section*.33}%
-\contentsline {subsection}{Arquitectura de la Solución}{15}{section*.34}%
-\contentsline {subsection}{Resultado del Desarrollo}{15}{section*.35}%
-\contentsline {section}{Evaluación}{15}{section*.36}%
-\contentsline {subsection}{Evaluación Funcional}{15}{section*.37}%
-\contentsline {subsection}{Evaluación de las Restricciones}{15}{section*.38}%
-\contentsline {subsection}{Evaluación de la Calidad}{15}{section*.39}%
-\contentsline {section}{Conclusiones}{15}{section*.40}%
-\contentsline {subsection}{Trabajo Futuro}{15}{section*.41}%
-\contentsline {section}{{\textbf {Referencias}}}{16}{section*.42}%
+\contentsline {subsection}{Diagramas de Uso}{15}{section*.29}%
+\contentsline {section}{Proceso}{16}{section*.31}%
+\contentsline {subsection}{Reporte SCRUM}{16}{section*.32}%
+\contentsline {subsection}{Estándares de Ingeniería Usados}{16}{section*.34}%
+\contentsline {subsection}{Selección de Herramientas}{18}{section*.35}%
+\contentsline {section}{Solución}{19}{section*.36}%
+\contentsline {subsection}{Arquitectura de la Solución}{19}{section*.37}%
+\contentsline {subsection}{Resultado del Desarrollo}{20}{section*.39}%
+\contentsline {section}{Evaluación}{22}{section*.44}%
+\contentsline {subsection}{Evaluación Funcional}{22}{section*.45}%
+\contentsline {subsection}{Evaluación de las Restricciones}{22}{section*.46}%
+\contentsline {subsection}{Evaluación de la Calidad}{22}{section*.47}%
+\contentsline {section}{Conclusiones}{22}{section*.48}%
+\contentsline {subsection}{Trabajo Futuro}{22}{section*.49}%
+\contentsline {section}{{\textbf {Referencias}}}{23}{section*.50}%
