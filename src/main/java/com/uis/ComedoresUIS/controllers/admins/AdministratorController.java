@@ -1,9 +1,13 @@
 package com.uis.ComedoresUIS.controllers.admins;
 
 import com.uis.ComedoresUIS.models.admins.Period;
+import com.uis.ComedoresUIS.models.menus.Ingredient;
+import com.uis.ComedoresUIS.models.menus.Meal;
+import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
 import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.services.admins.AdministratorService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("/admin")
 public class AdministratorController {
@@ -35,8 +40,8 @@ public class AdministratorController {
         }
     }
 
-    //Creación de menus
-    @PostMapping("/create/menu")
+    //Creation of programming menu
+    @PostMapping("/create/programming")
     public ResponseEntity<MenuProgramming> createMenuProgramming(@RequestBody MenuProgrammingDTO menuProgramming) {
         try {
             MenuProgramming menu = adminService.createMenuProgramming(menuProgramming);
@@ -47,5 +52,36 @@ public class AdministratorController {
         }
     }
 
+    @GetMapping("/menus")
+    public ResponseEntity<List<Meal>> getAllMeals() {
+        return ResponseEntity.ok(adminService.getAllMeals());
+    }
+
+    @PostMapping("/create/menu")
+    public ResponseEntity<Meal> createMeal(@RequestBody MealDTO mealDTO) {
+        try {
+            Meal m = adminService.createMeal(mealDTO);
+            return ResponseEntity.created(new URI("/admin/create/menu/" + m.getId())).build();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @DeleteMapping("/menus/{id}")
+    public void deleteMeal(@PathVariable Long id) {
+        adminService.deleteMealById(id);
+    }
+
+    @PostMapping("/create/ingredient")
+    public ResponseEntity<Ingredient> createIngredient(@RequestBody Ingredient ingredient) {
+        try {
+            Ingredient ingr = adminService.createIngredient(ingredient);
+            return ResponseEntity.created(new URI("/admin/create/ingredient/" + ingr.getId())).build();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 
 }

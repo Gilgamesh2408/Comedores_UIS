@@ -26,13 +26,12 @@ public class StudentController {
     }
 
     @GetMapping("/justification/{idStudent}")
-    public ResponseEntity<List<Justification>> getJustifications(@PathVariable Long idStudent) { //ESTO ES UNA PRUEBA
+    public ResponseEntity<List<Justification>> getJustifications(@PathVariable Long idStudent) { //THIS IS A TEST
         return ResponseEntity.ok(studentService.getAllJustificationsByStudent(idStudent));
     }
 
     @PostMapping("/justification")
     public ResponseEntity<Justification> createJustification(@RequestBody JustificationDTO justification) {
-        System.out.println(justification);
         try {
             Justification j = studentService.createJustification(justification);
             return ResponseEntity.created(new URI("/student/justification/" + j.getId())).body(j);

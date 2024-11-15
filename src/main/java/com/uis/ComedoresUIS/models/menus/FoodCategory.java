@@ -1,25 +1,24 @@
 package com.uis.ComedoresUIS.models.menus;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Setter;
+import com.uis.ComedoresUIS.models.menus.enums.FoodCategoryEnum;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class FoodCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Long id;
-    @Column(unique = true)
-    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private FoodCategoryEnum name;
 
 }

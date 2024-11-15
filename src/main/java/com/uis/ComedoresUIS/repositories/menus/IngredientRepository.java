@@ -10,4 +10,5 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
 
     List<Ingredient> getAllIngredientByFoodCategory(FoodCategory foodCategory);
 
+    Ingredient findByName(String name);
 }

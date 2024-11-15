@@ -1,8 +1,10 @@
 package com.uis.ComedoresUIS.models.menus;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +24,10 @@ public class Meal {
     private String drink;
     private String dessert;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinTable(name = "meal_ingredient",
-            joinColumns = @JoinColumn(name = "id_meal"),
-            inverseJoinColumns = @JoinColumn(name = "id_ingredient"))
-    private List<Ingredient> ingredients = new ArrayList<>();
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate createdAt;
+
+    @OneToMany(mappedBy = "meal", cascade = CascadeType.ALL,
+            orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<MealIngredient> ingredients = new ArrayList<>();
 }

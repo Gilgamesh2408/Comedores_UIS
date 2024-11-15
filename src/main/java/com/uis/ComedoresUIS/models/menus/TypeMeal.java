@@ -1,9 +1,7 @@
 package com.uis.ComedoresUIS.models.menus;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.uis.ComedoresUIS.models.menus.enums.TypeMealEnum;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -16,6 +14,8 @@ public class TypeMeal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Long id;
-    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private TypeMealEnum name;
 
 }

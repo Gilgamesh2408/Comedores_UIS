@@ -1,12 +1,10 @@
 package com.uis.ComedoresUIS.services.admins;
 
-import com.uis.ComedoresUIS.models.menus.Meal;
-import com.uis.ComedoresUIS.models.menus.MenuProgramming;
-import com.uis.ComedoresUIS.models.menus.TypeMeal;
-import com.uis.ComedoresUIS.repositories.menus.MealRepository;
-import com.uis.ComedoresUIS.repositories.menus.MenuProgrammingRepository;
-import com.uis.ComedoresUIS.repositories.menus.TypeMealRepository;
+import com.uis.ComedoresUIS.models.menus.*;
+import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
+import com.uis.ComedoresUIS.repositories.menus.*;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +16,20 @@ import java.util.List;
 @Service
 public class MenuService {
 
-    @Autowired
-    private MenuProgrammingRepository menuProgrammingRepository;
-    @Autowired
-    private TypeMealRepository typeMealRepository;
-    @Autowired
-    private MealRepository mealRepository;
+    private final MenuProgrammingRepository menuProgrammingRepository;
+    private final TypeMealRepository typeMealRepository;
+    private final MealRepository mealRepository;
+    private final IngredientRepository ingredientRepository;
+
+    public MenuService(MenuProgrammingRepository menuProgrammingRepository,
+                       TypeMealRepository typeMealRepository,
+                       MealRepository mealRepository,
+                       IngredientRepository ingredientRepository) {
+        this.menuProgrammingRepository = menuProgrammingRepository;
+        this.typeMealRepository = typeMealRepository;
+        this.mealRepository = mealRepository;
+        this.ingredientRepository = ingredientRepository;
+    }
 
     //CRUD for MenuProgramming
     public MenuProgramming createMenuProgramming(MenuProgramming menu) {
@@ -52,17 +58,55 @@ public class MenuService {
                 orElseThrow(() -> new EntityNotFoundException("TypeMeal not Found"));
     }
 
-    public List<TypeMeal> getAlTypeMeal() {
+    public List<TypeMeal> getAllTypeMeal() {
         return typeMealRepository.findAll();
     }
 
-    public Meal createMeal(Meal meal) {
+    @Transactional
+    public Meal createMeal(MealDTO mealDTO) {
+        System.out.println(mealDTO);
+        Meal meal = new Meal();
+        meal.setMainCourse(mealDTO.getMainCourse());
+        meal.setSoup(mealDTO.getSoup());
+        meal.setDrink(mealDTO.getDrink());
+        meal.setDessert(mealDTO.getDessert());
+        meal.setCreatedAt(mealDTO.getCreatedAt());
+
+        System.out.println(mealDTO.getIngredientsDTO());
+
+        List<MealIngredient> ingredients = mealDTO.getIngredientsDTO().stream()
+                .map(ingredientDTO -> {
+                    Ingredient ingredient = ingredientRepository.findByName(ingredientDTO.getName());
+
+                    MealIngredient mealIngredient = new MealIngredient();
+                    mealIngredient.setIngredient(ingredient);
+                    mealIngredient.setMeal(meal);
+                    mealIngredient.setQuantity(ingredientDTO.getQuantity());
+                    return mealIngredient;
+                })
+                .toList();
+
+        System.out.println(ingredients);
+
+        meal.setIngredients(ingredients);
         return mealRepository.save(meal);
     }
 
     protected Meal getMealById(Long id) {
         return mealRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Meal not Found"));
+    }
+
+    public List<Meal> getAllMeal() {
+        return mealRepository.findAll();
+    }
+
+    public void deleteMealById(Long id) {
+        mealRepository.deleteById(id);
+    }
+
+    public Ingredient createIngredient(Ingredient ingredient) {
+        return ingredientRepository.save(ingredient);
     }
 
     //Crear el join de Meal e Ingredient

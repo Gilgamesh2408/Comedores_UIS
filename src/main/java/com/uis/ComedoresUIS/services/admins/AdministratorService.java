@@ -3,6 +3,8 @@ package com.uis.ComedoresUIS.services.admins;
 import com.uis.ComedoresUIS.models.admins.Administrator;
 import com.uis.ComedoresUIS.models.admins.Date;
 import com.uis.ComedoresUIS.models.admins.Period;
+import com.uis.ComedoresUIS.models.menus.Ingredient;
+import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
 import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
 import com.uis.ComedoresUIS.models.menus.Meal;
 import com.uis.ComedoresUIS.models.menus.MenuProgramming;
@@ -15,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -60,8 +63,22 @@ public class AdministratorService {
         return menuService.createMenuProgramming(menuProgramming);
     }
 
-    public Meal createMeal(Meal meal) {
-        return menuService.createMeal(meal);
+    public Meal createMeal(MealDTO mealDTO) {
+        LocalDate today = LocalDate.now();
+        mealDTO.setCreatedAt(today);
+        return menuService.createMeal(mealDTO);
+    }
+
+    public List<Meal> getAllMeals() {
+        return menuService.getAllMeal();
+    }
+
+    public void deleteMealById(Long id) {
+        menuService.deleteMealById(id);
+    }
+
+    public Ingredient createIngredient(Ingredient ingredient) {
+        return menuService.createIngredient(ingredient);
     }
 
 }
