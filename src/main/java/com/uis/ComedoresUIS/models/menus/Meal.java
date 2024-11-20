@@ -27,7 +27,6 @@ public class Meal {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate createdAt;
 
-    @OneToMany(mappedBy = "meal", cascade = CascadeType.ALL,
-            orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<MealIngredient> ingredients = new ArrayList<>();
 }

@@ -1,11 +1,17 @@
 package com.uis.ComedoresUIS;
 
+import com.uis.ComedoresUIS.models.Role;
 import com.uis.ComedoresUIS.models.menus.FoodCategory;
 import com.uis.ComedoresUIS.models.menus.Ingredient;
 import com.uis.ComedoresUIS.models.menus.Meal;
+import com.uis.ComedoresUIS.models.menus.MealIngredient;
 import com.uis.ComedoresUIS.models.menus.enums.FoodCategoryEnum;
+import com.uis.ComedoresUIS.models.students.AccessToService;
+import com.uis.ComedoresUIS.models.students.Student;
 import com.uis.ComedoresUIS.repositories.menus.FoodCategoryRepository;
 import com.uis.ComedoresUIS.repositories.menus.IngredientRepository;
+import com.uis.ComedoresUIS.repositories.students.AccessToServiceRepository;
+import com.uis.ComedoresUIS.repositories.students.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,14 +28,18 @@ public class ComedoresUisApplication {
 
 	@Bean
 	CommandLineRunner init(IngredientRepository ingredientRepository,
-						   FoodCategoryRepository foodCategoryRepository) {
+						   StudentRepository studentRepository,
+						   FoodCategoryRepository foodCategoryRepository,
+						   AccessToServiceRepository accessRepository) {
 		return args -> {
 
-			FoodCategory grants = new FoodCategory();
-			grants.setName(FoodCategoryEnum.GRANOS_Y_DERIVADOS);
+			FoodCategory grants = FoodCategory.builder()
+					.name(FoodCategoryEnum.GRANOS_Y_DERIVADOS)
+					.build();
 
-			FoodCategory proteins = new FoodCategory();
-			proteins.setName(FoodCategoryEnum.PROTEINA_ANIMAL);
+			FoodCategory proteins = FoodCategory.builder()
+					.name(FoodCategoryEnum.PROTEINA_ANIMAL)
+					.build();
 
 			foodCategoryRepository.saveAll(List.of(grants, proteins));
 
@@ -50,7 +60,32 @@ public class ComedoresUisApplication {
 			ingredient1.setFoodCategory(proteins);
 
 			ingredientRepository.saveAll(List.of(ingredient1, ingredient));
+
+			//Access to service
+			AccessToService access = AccessToService.builder()
+					.breakfast(false)
+					.lunch(false)
+					.dinner(true)
+					.build();
+
+			accessRepository.save(access);
+
+			//Create student
+			Student student = Student.builder()
+					.firstname("Mauricio")
+					.lastname("Marín")
+					.codeStudent("2215634")
+					.password("$2a$12$mJauJZIuYiS0oBqtpZcWnuRKDBps2Ikv6bf3m64WDAwtPIUHB6RZS") //123
+					.personalEmail("mauricio@gmail.com")
+					.institutionalEmail("uis@gmail.com")
+					.role(Role.USER)
+					.activate(true)
+					.access(access)
+					.build();
+
+			studentRepository.save(student);
 		};
+
 	}
 
 }

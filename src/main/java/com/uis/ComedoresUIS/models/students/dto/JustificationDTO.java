@@ -1,5 +1,6 @@
 package com.uis.ComedoresUIS.models.students.dto;
 
+import com.uis.ComedoresUIS.models.students.enums.JustificationType;
 import lombok.Setter;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class JustificationDTO {
 
-    private Boolean type;
+    private JustificationType type;
     private LocalDate dateInit;
     private LocalDate dateEnd;
     private String description;

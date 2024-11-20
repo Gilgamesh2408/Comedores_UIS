@@ -1,6 +1,7 @@
 package com.uis.ComedoresUIS.models.students;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.uis.ComedoresUIS.models.students.enums.JustificationType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,7 +21,8 @@ public class Justification {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Boolean type;
+    @Enumerated(EnumType.STRING)
+    private JustificationType type;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dateInit;

@@ -69,7 +69,7 @@ public class AdministratorController {
     }
 
     @DeleteMapping("/menus/{id}")
-    public void deleteMeal(@PathVariable Long id) {
+    public void deleteMealById(@PathVariable Long id) {
         adminService.deleteMealById(id);
     }
 

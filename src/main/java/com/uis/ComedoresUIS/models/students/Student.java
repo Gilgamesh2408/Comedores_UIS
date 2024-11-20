@@ -1,7 +1,9 @@
 package com.uis.ComedoresUIS.models.students;
 
+import com.uis.ComedoresUIS.models.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Student {
 
     @Id
@@ -20,7 +23,7 @@ public class Student {
     @Column(length = 50)
     private String lastname;
     @Column(unique = true)
-    private Integer codeStudent;
+    private String codeStudent;
     @Column(length = 350)
     private String password;
     @Column(unique = true)
@@ -29,6 +32,9 @@ public class Student {
     private String institutionalEmail;
 
     private Boolean activate;
+
+    @Enumerated(EnumType.STRING)
+    private Role role = Role.USER;
 
     @ManyToOne
     @JoinColumn(name = "id_services")

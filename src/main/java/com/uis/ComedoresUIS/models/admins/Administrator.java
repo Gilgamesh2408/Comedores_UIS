@@ -1,10 +1,7 @@
 package com.uis.ComedoresUIS.models.admins;
 
-import jakarta.persistence.Id;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import com.uis.ComedoresUIS.models.Role;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -27,10 +24,13 @@ public class Administrator {
     @Column(length = 50)
     private String lastname;
     @Column(unique = true)
-    private Integer codeAdmin;
+    private String codeAdmin;
     @Column(length = 350)
     private String password;
 
     private Boolean superUser;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 }

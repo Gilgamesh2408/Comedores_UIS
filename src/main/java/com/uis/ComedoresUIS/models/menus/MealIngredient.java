@@ -1,5 +1,6 @@
 package com.uis.ComedoresUIS.models.menus;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class MealIngredient {
 
     @ManyToOne
     @JoinColumn(name = "id_meal")
+    @JsonIgnore
     private Meal meal;
 
     @ManyToOne

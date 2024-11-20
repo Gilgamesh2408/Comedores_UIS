@@ -25,8 +25,8 @@ public class MenuProgramming {
     @ManyToOne
     @JoinColumn(name = "id_amin")
     private Administrator admin;
-    @OneToOne
-    @JoinColumn(name = "id_type")
+    @ManyToOne
+    @JoinColumn(name = "id_type", unique = false)
     private TypeMeal typeMeal;
     @ManyToOne
     @JoinColumn(name = "id_meal")

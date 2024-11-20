@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class MenuService {
@@ -64,7 +67,7 @@ public class MenuService {
 
     @Transactional
     public Meal createMeal(MealDTO mealDTO) {
-        System.out.println(mealDTO);
+
         Meal meal = new Meal();
         meal.setMainCourse(mealDTO.getMainCourse());
         meal.setSoup(mealDTO.getSoup());
@@ -72,21 +75,17 @@ public class MenuService {
         meal.setDessert(mealDTO.getDessert());
         meal.setCreatedAt(mealDTO.getCreatedAt());
 
-        System.out.println(mealDTO.getIngredientsDTO());
-
         List<MealIngredient> ingredients = mealDTO.getIngredientsDTO().stream()
                 .map(ingredientDTO -> {
                     Ingredient ingredient = ingredientRepository.findByName(ingredientDTO.getName());
-
                     MealIngredient mealIngredient = new MealIngredient();
-                    mealIngredient.setIngredient(ingredient);
+
                     mealIngredient.setMeal(meal);
+                    mealIngredient.setIngredient(ingredient);
                     mealIngredient.setQuantity(ingredientDTO.getQuantity());
                     return mealIngredient;
                 })
                 .toList();
-
-        System.out.println(ingredients);
 
         meal.setIngredients(ingredients);
         return mealRepository.save(meal);
