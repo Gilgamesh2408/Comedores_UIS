@@ -1,8 +1,8 @@
 package com.uis.ComedoresUIS.services.students;
 
-import com.uis.ComedoresUIS.models.students.Justification;
-import com.uis.ComedoresUIS.models.students.Student;
-import com.uis.ComedoresUIS.repositories.students.JustificationRepository;
+import com.uis.ComedoresUIS.persistence.models.students.Justification;
+import com.uis.ComedoresUIS.persistence.models.students.Student;
+import com.uis.ComedoresUIS.persistence.repositories.students.JustificationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

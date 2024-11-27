@@ -1,17 +1,20 @@
 package com.uis.ComedoresUIS;
 
-import com.uis.ComedoresUIS.models.Role;
-import com.uis.ComedoresUIS.models.menus.FoodCategory;
-import com.uis.ComedoresUIS.models.menus.Ingredient;
-import com.uis.ComedoresUIS.models.menus.Meal;
-import com.uis.ComedoresUIS.models.menus.MealIngredient;
-import com.uis.ComedoresUIS.models.menus.enums.FoodCategoryEnum;
-import com.uis.ComedoresUIS.models.students.AccessToService;
-import com.uis.ComedoresUIS.models.students.Student;
-import com.uis.ComedoresUIS.repositories.menus.FoodCategoryRepository;
-import com.uis.ComedoresUIS.repositories.menus.IngredientRepository;
-import com.uis.ComedoresUIS.repositories.students.AccessToServiceRepository;
-import com.uis.ComedoresUIS.repositories.students.StudentRepository;
+import com.uis.ComedoresUIS.persistence.models.Role;
+import com.uis.ComedoresUIS.persistence.models.admins.Administrator;
+import com.uis.ComedoresUIS.persistence.models.menus.FoodCategory;
+import com.uis.ComedoresUIS.persistence.models.menus.Ingredient;
+import com.uis.ComedoresUIS.persistence.models.menus.TypeMeal;
+import com.uis.ComedoresUIS.persistence.models.menus.enums.FoodCategoryEnum;
+import com.uis.ComedoresUIS.persistence.models.menus.enums.TypeMealEnum;
+import com.uis.ComedoresUIS.persistence.models.students.AccessToService;
+import com.uis.ComedoresUIS.persistence.models.students.Student;
+import com.uis.ComedoresUIS.persistence.repositories.admins.AdministratorRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.FoodCategoryRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.IngredientRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.TypeMealRepository;
+import com.uis.ComedoresUIS.persistence.repositories.students.AccessToServiceRepository;
+import com.uis.ComedoresUIS.persistence.repositories.students.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,7 +33,9 @@ public class ComedoresUisApplication {
 	CommandLineRunner init(IngredientRepository ingredientRepository,
 						   StudentRepository studentRepository,
 						   FoodCategoryRepository foodCategoryRepository,
-						   AccessToServiceRepository accessRepository) {
+						   AccessToServiceRepository accessRepository,
+						   AdministratorRepository adminRepository,
+						   TypeMealRepository typeMealRepository) {
 		return args -> {
 
 			FoodCategory grants = FoodCategory.builder()
@@ -84,6 +89,33 @@ public class ComedoresUisApplication {
 					.build();
 
 			studentRepository.save(student);
+
+			//Create Admin
+			Administrator admin = Administrator.builder()
+					.firstname("Jorge")
+					.lastname("Nitales")
+					.codeAdmin("2215631")
+					.password("$2a$12$mJauJZIuYiS0oBqtpZcWnuRKDBps2Ikv6bf3m64WDAwtPIUHB6RZS") //123
+					.superUser(false)
+					.role(Role.ADMIN)
+					.build();
+
+			adminRepository.save(admin);
+
+			//Create Type Meal
+			TypeMeal breakfast = TypeMeal.builder()
+					.name(TypeMealEnum.DESAYUNO)
+					.build();
+
+			TypeMeal lunch = TypeMeal.builder()
+					.name(TypeMealEnum.ALMUERZO)
+					.build();
+
+			TypeMeal dinner = TypeMeal.builder()
+					.name(TypeMealEnum.CENA)
+					.build();
+
+			typeMealRepository.saveAll(List.of(breakfast, lunch, dinner));
 		};
 
 	}

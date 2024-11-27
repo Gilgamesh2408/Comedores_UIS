@@ -1,20 +1,19 @@
 package com.uis.ComedoresUIS.services.admins;
 
-import com.uis.ComedoresUIS.models.menus.*;
-import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
-import com.uis.ComedoresUIS.repositories.menus.*;
+import com.uis.ComedoresUIS.persistence.models.menus.*;
+import com.uis.ComedoresUIS.persistence.models.menus.dto.MealDTO;
+import com.uis.ComedoresUIS.persistence.repositories.menus.IngredientRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.MealRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.MenuProgrammingRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.TypeMealRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
 public class MenuService {

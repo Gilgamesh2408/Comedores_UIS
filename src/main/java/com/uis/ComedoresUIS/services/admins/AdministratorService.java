@@ -1,22 +1,23 @@
 package com.uis.ComedoresUIS.services.admins;
 
-import com.uis.ComedoresUIS.models.admins.Administrator;
-import com.uis.ComedoresUIS.models.admins.Date;
-import com.uis.ComedoresUIS.models.admins.Period;
-import com.uis.ComedoresUIS.models.menus.Ingredient;
-import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
-import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
-import com.uis.ComedoresUIS.models.menus.Meal;
-import com.uis.ComedoresUIS.models.menus.MenuProgramming;
-import com.uis.ComedoresUIS.models.menus.TypeMeal;
-import com.uis.ComedoresUIS.repositories.admins.AdministratorRepository;
-import com.uis.ComedoresUIS.repositories.admins.DateRepository;
-import com.uis.ComedoresUIS.repositories.admins.PeriodRepository;
+import com.uis.ComedoresUIS.persistence.models.admins.Administrator;
+import com.uis.ComedoresUIS.persistence.models.admins.Date;
+import com.uis.ComedoresUIS.persistence.models.admins.Period;
+import com.uis.ComedoresUIS.persistence.models.menus.Ingredient;
+import com.uis.ComedoresUIS.persistence.models.menus.dto.MealDTO;
+import com.uis.ComedoresUIS.persistence.models.menus.dto.MenuProgrammingDTO;
+import com.uis.ComedoresUIS.persistence.models.menus.Meal;
+import com.uis.ComedoresUIS.persistence.models.menus.MenuProgramming;
+import com.uis.ComedoresUIS.persistence.models.menus.TypeMeal;
+import com.uis.ComedoresUIS.persistence.repositories.admins.AdministratorRepository;
+import com.uis.ComedoresUIS.persistence.repositories.admins.DateRepository;
+import com.uis.ComedoresUIS.persistence.repositories.admins.PeriodRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -45,8 +46,9 @@ public class AdministratorService {
     }
 
     @Transactional
-    public MenuProgramming createMenuProgramming(MenuProgrammingDTO menu) {
-        Administrator admin = adminRepository.findById(menu.getAdmin()).
+    public MenuProgramming createMenuProgramming(MenuProgrammingDTO menu,
+                                                 Principal principal) {
+        Administrator admin = adminRepository.findAdministratorByCodeAdmin(principal.getName()).
                 orElseThrow(() -> new EntityNotFoundException("Admin not Found"));
 
         TypeMeal typeMeal = menuService.getTypeMealById(menu.getTypeMeal());

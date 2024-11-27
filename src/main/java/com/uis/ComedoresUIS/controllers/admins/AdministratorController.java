@@ -1,22 +1,21 @@
 package com.uis.ComedoresUIS.controllers.admins;
 
-import com.uis.ComedoresUIS.models.admins.Period;
-import com.uis.ComedoresUIS.models.menus.Ingredient;
-import com.uis.ComedoresUIS.models.menus.Meal;
-import com.uis.ComedoresUIS.models.menus.dto.MealDTO;
-import com.uis.ComedoresUIS.models.menus.dto.MenuProgrammingDTO;
-import com.uis.ComedoresUIS.models.menus.MenuProgramming;
+import com.uis.ComedoresUIS.persistence.models.admins.Period;
+import com.uis.ComedoresUIS.persistence.models.menus.Ingredient;
+import com.uis.ComedoresUIS.persistence.models.menus.Meal;
+import com.uis.ComedoresUIS.persistence.models.menus.dto.MealDTO;
+import com.uis.ComedoresUIS.persistence.models.menus.dto.MenuProgrammingDTO;
+import com.uis.ComedoresUIS.persistence.models.menus.MenuProgramming;
 import com.uis.ComedoresUIS.services.admins.AdministratorService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.security.Principal;
 import java.util.List;
 
-@Slf4j
 @RestController
 @RequestMapping("/admin")
 public class AdministratorController {
@@ -42,9 +41,10 @@ public class AdministratorController {
 
     //Creation of programming menu
     @PostMapping("/create/programming")
-    public ResponseEntity<MenuProgramming> createMenuProgramming(@RequestBody MenuProgrammingDTO menuProgramming) {
+    public ResponseEntity<MenuProgramming> createMenuProgramming(@RequestBody MenuProgrammingDTO menuProgramming,
+                                                                 Principal principal) {
         try {
-            MenuProgramming menu = adminService.createMenuProgramming(menuProgramming);
+            MenuProgramming menu = adminService.createMenuProgramming(menuProgramming, principal);
             return ResponseEntity.created(new URI("/admin/create/menu/" + menu.getId())).build();
         } catch (Exception e) {
             System.out.println(e.getMessage());

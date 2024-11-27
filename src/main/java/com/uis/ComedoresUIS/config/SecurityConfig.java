@@ -43,6 +43,16 @@ public class SecurityConfig {
                     http.requestMatchers(HttpMethod.GET, "/student/**").hasRole("USER");
                     http.requestMatchers(HttpMethod.POST, "student/**").hasRole("USER");
 
+                    http.requestMatchers(HttpMethod.GET, "/admin/**").hasAnyRole("ADMIN", "SUPERADMIN");
+                    http.requestMatchers(HttpMethod.POST, "/admin/create/programming").hasAnyRole("ADMIN", "SUPERADMIN");
+                    http.requestMatchers(HttpMethod.POST, "/admin/create/menu").hasAnyRole("ADMIN", "SUPERADMIN");
+                    http.requestMatchers(HttpMethod.DELETE, "/admin/menus/{id}").hasAnyRole("ADMIN", "SUPERADMIN");
+
+                    //Endpoints super admin
+                    http.requestMatchers(HttpMethod.POST, "/admin/create/period").hasRole("SUPERADMIN");
+                    http.requestMatchers(HttpMethod.POST, "/admin/create/ingredient").hasRole("SUPERADMIN");
+
+
                     http.anyRequest().authenticated();
 
                 })

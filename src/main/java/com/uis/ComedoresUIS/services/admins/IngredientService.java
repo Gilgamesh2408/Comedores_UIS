@@ -1,9 +1,9 @@
 package com.uis.ComedoresUIS.services.admins;
 
-import com.uis.ComedoresUIS.models.menus.FoodCategory;
-import com.uis.ComedoresUIS.models.menus.Ingredient;
-import com.uis.ComedoresUIS.repositories.menus.FoodCategoryRepository;
-import com.uis.ComedoresUIS.repositories.menus.IngredientRepository;
+import com.uis.ComedoresUIS.persistence.models.menus.FoodCategory;
+import com.uis.ComedoresUIS.persistence.models.menus.Ingredient;
+import com.uis.ComedoresUIS.persistence.repositories.menus.FoodCategoryRepository;
+import com.uis.ComedoresUIS.persistence.repositories.menus.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

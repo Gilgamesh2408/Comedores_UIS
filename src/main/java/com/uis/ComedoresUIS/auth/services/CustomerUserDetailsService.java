@@ -2,10 +2,10 @@ package com.uis.ComedoresUIS.auth.services;
 
 import com.uis.ComedoresUIS.auth.dto.AuthLoginRequest;
 import com.uis.ComedoresUIS.auth.dto.AuthResponse;
-import com.uis.ComedoresUIS.models.admins.Administrator;
-import com.uis.ComedoresUIS.models.students.Student;
-import com.uis.ComedoresUIS.repositories.admins.AdministratorRepository;
-import com.uis.ComedoresUIS.repositories.students.StudentRepository;
+import com.uis.ComedoresUIS.persistence.models.admins.Administrator;
+import com.uis.ComedoresUIS.persistence.models.students.Student;
+import com.uis.ComedoresUIS.persistence.repositories.admins.AdministratorRepository;
+import com.uis.ComedoresUIS.persistence.repositories.students.StudentRepository;
 import com.uis.ComedoresUIS.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -42,11 +42,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String code) throws UsernameNotFoundException {
-        if(isAdmin) {
-            return loadAdmin(code);
-        } else {
-            return loadStudent(code);
-        }
+        return isAdmin ? loadAdmin(code) : loadStudent(code);
     }
 
     public AuthResponse login(AuthLoginRequest authLoginRequest) {
@@ -64,11 +60,12 @@ public class CustomerUserDetailsService implements UserDetailsService {
     public Authentication authenticate(String code, String password) {
         UserDetails user = loadUserByUsername(code);
 
-        if(user == null) {
+        if (user == null) {
             throw new BadCredentialsException("Invalid username or password");
         } else if (!passwordEncoder.matches(password, user.getPassword())) {
             throw new BadCredentialsException("Invalid password");
         }
+
         return new UsernamePasswordAuthenticationToken(code,
                 user.getPassword(), user.getAuthorities());
     }
