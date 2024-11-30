@@ -9,39 +9,43 @@
         Accede al servicio de comedor de la UIS
       </p>
     </div>
-    <form class="mt-8 space-y-6" formGroup="loginForm" (ngSubmit)="onSubmit()">
+    <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="rounded-md shadow-sm -space-y-px">
+        
+        <!-- Campo Usuario -->
+        
         <div>
           <label for="username" class="sr-only">Usuario</label>
-          <input id="username" formControlName="username" name="username" type="text" required
+          <input id="username" formControlName="username" name="username" type="text" 
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm"
             placeholder="Usuario">
         </div>
+
+        <!-- Campo Contraseña -->
+
         <div>
           <label for="password" class="sr-only">Contraseña</label>
-          <input id="password" formControlName="password" name="password" type="password" required
+          <input id="password" formControlName="password" name="password" type="password" 
             class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm"
             placeholder="Contraseña">
         </div>
 
-        <!-- Nueva sección para seleccionar tipo de usuario -->
+        <!-- Sección de Administrador -->
+
+
         <div class="mt-4">
-          <label class="block text-sm font-medium text-gray-700">Tipo de Usuario</label>
+          <label class="block text-sm font-medium text-gray-700">¿Eres admin?</label>
           <div class="flex items-center mt-2">
             <label class="mr-4">
-              <input type="radio" formControlName="userType" name="userType" value="administrativo" class="mr-2">
+              <input  id="isAdmin" type="checkbox" formControlName="isAdmin"  class="mr-2">
               Administrativo
-            </label>
-            <label>
-              <input type="radio" formControlName="userType" name="userType" value="estudiante" class="mr-2">
-              Estudiante
             </label>
           </div>
         </div>
       </div>
 
       <div>
-        <button type="submit"
+        <button type="submit" (click)="login()"
           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#67b93e] hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#67b93e]">
           Iniciar Sesión
         </button>

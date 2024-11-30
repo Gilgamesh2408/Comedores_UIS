@@ -7,6 +7,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,4 +19,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 })
 export class AppComponent {
   title = 'comedores_UIS';
+
+
+  
 }
