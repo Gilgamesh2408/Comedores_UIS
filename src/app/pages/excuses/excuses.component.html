@@ -4,19 +4,19 @@
       <h2 class="text-3xl font-extrabold text-gray-900 mb-6">
         Registrar Excusa
       </h2>
-      <form [formGroup]="excuseForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form [formGroup]="excuseForm" (ngSubmit)="crearJustificacion()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2">
             Tipo de Excusa
           </label>
           <div class="flex items-center">
             <label class="mr-4">
-              <input type="radio" formControlName="excuseType" value="permanente" required
+              <input type="radio" formControlName="excuseType" value="PERMANENTE" required
                 class="mr-2 leading-tight">
               Permanente
             </label>
             <label>
-              <input type="radio" formControlName="excuseType" value="esporadica" required
+              <input type="radio" formControlName="excuseType" value="ESPORADICA" required
                 class="mr-2 leading-tight">
               Esporádica
             </label>
@@ -28,17 +28,17 @@
           </label>
           <div class="flex items-center">
             <label class="mr-4">
-              <input type="checkbox" formControlName="excuseClass" value="permanente" required
+              <input type="radio" formControlName="excuseClass" value="Desayuno" required
                 class="mr-2 leading-tight">
               Desayuno
             </label>
             <label>
-              <input type="checkbox" formControlName="excuseClass" value="esporadica" required
+              <input type="radio" formControlName="excuseClass" value="Almuerzo" required
                 class="mr-2 leading-tight">
               Almuerzo
             </label>
             <label>
-              <input type="checkbox" formControlName="excuseClass" value="esporadica" required
+              <input type="radio" formControlName="excuseClass" value="Comida" required
                 class="mr-2 leading-tight">
               Comida
             </label>
@@ -67,7 +67,7 @@
             rows="4"></textarea>
         </div>
         <div class="flex items-center justify-between">
-          <button type="onSubmit"
+          <button type="submit"
             class="bg-[#67b93e] hover:bg-[#5aa535] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
             Enviar Excusa
           </button>

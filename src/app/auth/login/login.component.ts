@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
-      console.log('Datos del formulario;', loginData)
+      //console.log('Datos del formulario;', loginData)
       this.authService.login(this.loginForm.value.username, this.loginForm.value.password, this.loginForm.value.isAdmin).subscribe({
         next: (response)=> {
           if (response) {

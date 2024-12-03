@@ -22,7 +22,7 @@ export class AuthLoginService {
       tap(response => {
         if(response){
           this.setToken(response.jwt)
-          console.log('token', this.getToken());
+          //console.log('token', this.getToken());
           
         } else {
           console.error('No se recibió token en la respuesta');
@@ -38,9 +38,10 @@ export class AuthLoginService {
   private setToken(token: string): void{
     localStorage.setItem(this.tokenkey, token)
   }
-  private getToken(): string | null{
+  getToken(): string | null{
     if(typeof window !== 'undefined'){
-      return localStorage.getItem(this.tokenkey)
+      const token = localStorage.getItem(this.tokenkey)
+      return token
     } else {
       return null
     }
