@@ -27,23 +27,6 @@ export class ExcusesComponent {
       reason: ['', Validators.required]
     });
   }
-  // Método para obtener el menú de un día específico
-  getMenuForDay(day: string) {
-    const token = this.authService.getToken(); // Obtiene el token
-    //console.log("Token en submitJustification:", token);   //revisa el token
-    if (token) {
-      this.studentService.getMenu(token, day).subscribe({
-        next: (response) => {
-          console.log('Menú recibido:', response);
-        },
-        error: (err) => {
-          console.error('Error al obtener el menú:', err);
-        }
-      });
-    } else {
-      console.error('No se encontró un token de autenticación');
-    }
-  }
 
   // Método para enviar una justificación
   crearJustificacion() {

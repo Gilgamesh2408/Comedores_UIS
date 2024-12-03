@@ -1,6 +1,8 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule } from '@angular/forms';
+import { StudentService } from '../../services/Students/student.service';
+import { AuthLoginService } from '../../services/login/auth-login.service';
 
 interface Nutrition {
   calories: number;
@@ -30,92 +32,41 @@ interface WeekMenu {
   styleUrl: './menu.component.css'
 })
 
-export class MenuComponent {
-  selectedDay = 'Lunes';
+export class MenuComponent implements OnInit {
+  selectedDay = 'Monday';
   selectedMeal: string | null = null;
+  fullWeekMenu: WeekMenu = {}; // Guardar el menú completo de la semana
 
-  FULL_WEEK_MENU: WeekMenu = {
-    'Lunes': {
-      'Desayuno': {
-        items: ['Huevos revueltos', 'Pan integral', 'Jugo de naranja'],
-        nutrition: { calories: 450, protein: '15g', carbs: '60g', fat: '15g' }
-      },
-      'Almuerzo': {
-        items: ['Pollo a la plancha', 'Arroz', 'Ensalada', 'Sopa de verduras'],
-        nutrition: { calories: 650, protein: '35g', carbs: '80g', fat: '20g' }
-      },
-      'Cena': {
-        items: ['Pescado al horno', 'Puré de papas', 'Vegetales al vapor'],
-        nutrition: { calories: 550, protein: '30g', carbs: '65g', fat: '18g' }
-      }
-    },
-    'Martes': {
-      'Desayuno': {
-        items: ['Tamal', 'Pan integral', 'Chocolate'],
-        nutrition: { calories: 450, protein: '15g', carbs: '60g', fat: '15g' }
-      },
-      'Almuerzo': {
-        items: ['Carne asada', 'Arroz', 'Ensalada', 'Sopa de verduras'],
-        nutrition: { calories: 650, protein: '35g', carbs: '80g', fat: '20g' }
-      },
-      'Cena': {
-        items: ['Avena', 'Vegetales al vapor'],
-        nutrition: { calories: 550, protein: '30g', carbs: '65g', fat: '18g' }
-      }
-    },
+  constructor(private menuService: StudentService,
+              private authService: AuthLoginService) { }
 
-    'Miercoles': {
-      'Desayuno': {
-        items: ['Huevos revueltos', 'Pan integral', 'Jugo de naranja'],
-        nutrition: { calories: 450, protein: '15g', carbs: '60g', fat: '15g' }
-      },
-      'Almuerzo': {
-        items: ['Pollo a la plancha', 'Arroz', 'Ensalada', 'Sopa de verduras'],
-        nutrition: { calories: 650, protein: '35g', carbs: '80g', fat: '20g' }
-      },
-      'Cena': {
-        items: ['Pescado al horno', 'Puré de papas', 'Vegetales al vapor'],
-        nutrition: { calories: 550, protein: '30g', carbs: '65g', fat: '18g' }
-      }
-    },
+  ngOnInit() {
+    this.loadMenu();
+  }
 
-    'Jueves': {
-      'Desayuno': {
-        items: ['Huevos revueltos', 'Pan integral', 'Jugo de naranja'],
-        nutrition: { calories: 450, protein: '15g', carbs: '60g', fat: '15g' }
-      },
-      'Almuerzo': {
-        items: ['Pollo a la plancha', 'Arroz', 'Ensalada', 'Sopa de verduras'],
-        nutrition: { calories: 650, protein: '35g', carbs: '80g', fat: '20g' }
-      },
-      'Cena': {
-        items: ['Pescado al horno', 'Puré de papas', 'Vegetales al vapor'],
-        nutrition: { calories: 550, protein: '30g', carbs: '65g', fat: '18g' }
+  loadMenu() {
+    const token = this.authService.getToken(); // Obtiene el token
+    if(token){
+    
+    this.menuService.getMenuByDay(token,this.selectedDay).subscribe({
+      next: (menu) => {
+      this.fullWeekMenu[this.selectedDay] = menu; // Actualiza el menú con el día seleccionado
+      console.log('Menú recibido:', menu);},
+      error: (err) => {
+        console.error('Error al obtener el menú:', err);
       }
-    },
-
-    'Viernes': {
-      'Desayuno': {
-        items: ['Huevos revueltos', 'Pan integral', 'Jugo de naranja'],
-        nutrition: { calories: 450, protein: '15g', carbs: '60g', fat: '15g' }
-      },
-      'Almuerzo': {
-        items: ['Pollo a la plancha', 'Arroz', 'Ensalada', 'Sopa de verduras'],
-        nutrition: { calories: 650, protein: '35g', carbs: '80g', fat: '20g' }
-      },
-      'Cena': {
-        items: ['Pescado al horno', 'Puré de papas', 'Vegetales al vapor'],
-        nutrition: { calories: 550, protein: '30g', carbs: '65g', fat: '18g' }
-      }
-    },
-  };
+    });
+    }else {
+      console.error('No se encontró un token de autenticación');
+    }
+  }
 
   get days(): string[] {
-    return Object.keys(this.FULL_WEEK_MENU);
+    return Object.keys(this.fullWeekMenu);
   }
 
   get selectedDayMenu(): DayMenu {
-    return this.FULL_WEEK_MENU[this.selectedDay];
+    return this.fullWeekMenu[this.selectedDay];
   }
 
   showNutritionInfo(meal: string) {

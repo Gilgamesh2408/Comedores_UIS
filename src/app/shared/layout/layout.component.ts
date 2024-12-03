@@ -25,5 +25,6 @@ export class LayoutComponent {
   logout(): void {
       this.authService.logout();
   }
+  
 
 }

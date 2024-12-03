@@ -14,9 +14,9 @@
         </select>
       </div>
       <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-        <div *ngFor="let mealType of ['Desayuno', 'Almuerzo', 'Cena']" class="px-4 py-5 sm:px-6 border-b border-gray-200">
+        <div *ngFor="let mealType of ['DESAYUNO', 'ALMUERZO', 'CENA']" class="px-4 py-5 sm:px-6 border-b border-gray-200">
           <h3 class="text-lg leading-6 font-medium text-gray-900 mb-2">{{mealType}}</h3>
-          <ul class="mt-2 list-disc list-inside mb-4">
+          <ul class="mt-2 list-disc list-inside mb-4" *ngIf="selectedDayMenu[mealType] && selectedDayMenu[mealType].items">
             <li *ngFor="let item of selectedDayMenu[mealType].items" class="text-sm text-gray-500">{{item}}</li>
           </ul>
           <button (click)="showNutritionInfo(mealType)"
