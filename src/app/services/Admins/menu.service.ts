@@ -11,7 +11,10 @@ export class MenuService {
 
   constructor(private http: HttpClient) { }
 
-  createMeal(menuData: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/create/menu`, menuData);
+  createMeal(menuData: any, token: String): Observable<any> {
+    const headers = { 'Authorization': `Bearer ${token}`, 
+    'Content-Type': 'application/json' };
+    
+    return this.http.post(`${this.apiUrl}/create/menu`, menuData, {headers});
   }
 }

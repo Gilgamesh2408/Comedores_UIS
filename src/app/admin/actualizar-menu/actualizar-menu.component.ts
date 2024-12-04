@@ -5,6 +5,7 @@ import { MenuService } from '../../services/Admins/menu.service';
 import { IngredientDtoModule } from '../../models/ingredient-dto/ingredient-dto.module';
 import {ReactiveFormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
+import { AuthLoginService } from '../../services/login/auth-login.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class ActualizarMenuComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private menuService: MenuService,
-    private router: Router
+    private router: Router,
+    private authService: AuthLoginService
   ) { }
 
   ngOnInit(): void {
@@ -72,15 +74,22 @@ export class ActualizarMenuComponent implements OnInit {
           quantity: ingredient.quantity
         }))
       };
+      console.log('Datos del formulario;', formData)
+
   
       // Enviar los datos al backend
-      this.menuService.createMeal(menuData).subscribe(response => {
-        console.log('Menú actualizado correctamente:', response);
-        this.router.navigate(['/admin']);  // Redirigir al panel admin
-      }, error => {
-        console.error('Error al actualizar el menú:', error);
-      });
+      const token = this.authService.getToken();
+      
+      if(token){
+        console.log("token: ",token)
+        this.menuService.createMeal(menuData,token).subscribe(response => {
+          console.log('Menú actualizado correctamente:', response);
+          this.router.navigate(['/admin']);  // Redirigir al panel admin
+        });
+
+      } else {
+          console.error('Error al actualizar el menú');
+      }
     }
   }
-
 }
