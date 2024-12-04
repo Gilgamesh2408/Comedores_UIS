@@ -1,0 +1,69 @@
+<div class="min-h-[calc(92vh-4rem)] flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-4">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Actualizar Menú</h2>
+      <p class="mt-2 text-center text-sm text-gray-600">Actualiza el menú para el comedor</p>
+  
+      <form [formGroup]="menuForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6">
+        <div class="rounded-md shadow-sm space-y-4">
+          
+          <!-- Plato Principal -->
+          <div>
+            <label for="mainCourse" class="block text-sm font-medium text-gray-700">Plato Principal</label>
+            <input id="mainCourse" formControlName="mainCourse" type="text" 
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Plato Principal">
+          </div>
+  
+          <!-- Sopa -->
+          <div>
+            <label for="soup" class="block text-sm font-medium text-gray-700">Sopa</label>
+            <input id="soup" formControlName="soup" type="text" 
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Sopa">
+          </div>
+  
+          <!-- Bebida -->
+          <div>
+            <label for="drink" class="block text-sm font-medium text-gray-700">Bebida</label>
+            <input id="drink" formControlName="drink" type="text" 
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Bebida">
+          </div>
+  
+          <!-- Postre -->
+          <div>
+            <label for="dessert" class="block text-sm font-medium text-gray-700">Postre</label>
+            <input id="dessert" formControlName="dessert" type="text" 
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Postre">
+          </div>
+  
+          <!-- Ingredientes -->
+          <div formArrayName="ingredientsDTO" class="space-y-4">
+            <div *ngFor="let ingredient of ingredients.controls; let i = index" [formGroupName]="i" class="flex space-x-2">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700">Ingrediente</label>
+                <input formControlName="name" type="text" 
+                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Nombre del Ingrediente">
+              </div>
+  
+              <div>
+                <label for="quantity" class="block text-sm font-medium text-gray-700">Cantidad</label>
+                <input formControlName="quantity" type="text" 
+                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-[#67b93e] focus:border-[#67b93e] focus:z-10 sm:text-sm" placeholder="Cantidad">
+              </div>
+  
+              <button type="button" (click)="removeIngredient(i)" class="text-red-500">Eliminar</button>
+            </div>
+  
+            <!-- Botón para agregar ingredientes -->
+            <button type="button" (click)="addIngredient()" class="mt-4 text-[#67b93e]">Añadir Ingrediente</button>
+          </div>
+        </div>
+  
+        <!-- Botón de enviar -->
+        <div>
+          <button type="submit" [disabled]="menuForm.invalid"
+            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#67b93e] hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#67b93e]">
+            Actualizar Menú
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

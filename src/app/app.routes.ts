@@ -9,6 +9,7 @@ import { authGuard } from './guard/auth.guard';
 import { authenticatedGuard } from './guard/authenticated.guard';
 import { userGuardGuard } from './guard/user-guard.guard';
 import { adminGuardGuard } from './guard/admin-guard.guard';
+import { ActualizarMenuComponent } from './admin/actualizar-menu/actualizar-menu.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -19,7 +20,7 @@ export const routes: Routes = [
 
   { path: 'menu', 
     component: MenuComponent , 
-    canActivate:[authGuard]},
+    canActivate:[authGuard, userGuardGuard]},
 
   { path: 'excuse', 
     component: ExcusesComponent, 
@@ -33,6 +34,10 @@ export const routes: Routes = [
 
   { path: 'admin',
     component:AdminComponent, 
-    canActivate:[authGuard,adminGuardGuard]}
+    canActivate:[authGuard,adminGuardGuard]},
+
+    { path: 'admin/actualizar_menu',
+      component:ActualizarMenuComponent, 
+      canActivate:[authGuard,adminGuardGuard]},
 ];
 

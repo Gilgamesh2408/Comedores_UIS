@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginForm.value.username, this.loginForm.value.password, this.loginForm.value.isAdmin).subscribe({
         next: (response)=> {
           if (response) {
-          console.log('Login exitoso', response);
+          //console.log('Login exitoso', response);
           this.router.navigate(['/menu']); // Redirige a la página principal
         } else {
           console.error('Error en la respuesta', response);

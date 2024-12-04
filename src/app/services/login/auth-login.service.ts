@@ -23,7 +23,7 @@ export class AuthLoginService {
       tap(response => {
         if(response){
           this.setToken(response.jwt)
-          console.log('token', this.getToken());
+          //console.log('token', this.getToken());
           
         } else {
           console.error('No se recibió token en la respuesta');
