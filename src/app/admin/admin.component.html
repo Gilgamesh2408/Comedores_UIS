@@ -1,39 +1,50 @@
 <div class="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl w-full space-y-6">
-      <!-- Título -->
-      <div>
-        <h2 class="text-3xl font-extrabold text-gray-900">
-          Panel Administrativo
-        </h2>
-        <p class="text-sm text-gray-600">Bienvenido al panel de control administrativo</p>
+  <div class="max-w-7xl w-full space-y-6">
+    <!-- Título -->
+    <div>
+      <h2 class="text-3xl font-extrabold text-gray-900">
+        Panel Administrativo
+      </h2>
+      <p class="text-sm text-gray-600">Bienvenido al panel de control administrativo</p>
+    </div>
+
+    <!-- Opciones del Administrador -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Actualizar Menú -->
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800">Actualizar Menú</h3>
+        <p class="text-sm text-gray-600">Gestiona el menú del comedor de la UIS.</p>
+        <button 
+          class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]"
+          (click)="actualizarMenu()"
+        >
+          Actualizar Menú
+        </button>
       </div>
-  
-      <!-- Opciones del Administrador -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <h3 class="text-xl font-semibold text-gray-800">Actualizar Menú</h3>
-          <p class="text-sm text-gray-600">Gestiona el menú del comedor de la UIS.</p>
-          <button class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]">
-            Actualizar Menú
-          </button>
-        </div>
-  
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <h3 class="text-xl font-semibold text-gray-800">Leer Excusas</h3>
-          <p class="text-sm text-gray-600">Consulta las excusas enviadas por los estudiantes.</p>
-          <button class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]">
-            Ver Excusas
-          </button>
-        </div>
-  
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <h3 class="text-xl font-semibold text-gray-800">Avisos</h3>
-          <p class="text-sm text-gray-600">Publica avisos importantes para los estudiantes.</p>
-          <button class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]">
-            Crear Aviso
-          </button>
-        </div>
+
+      <!-- Leer Excusas -->
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800">Leer Excusas</h3>
+        <p class="text-sm text-gray-600">Consulta las excusas enviadas por los estudiantes.</p>
+        <!-- <button 
+          class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]"
+          (click)="leerExcusas()"
+        > -->
+          Ver Excusas
+        <!-- </button> -->
       </div>
+
+      <!-- Avisos -->
+      <!-- <div class="bg-white shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800">Avisos</h3>
+        <p class="text-sm text-gray-600">Publica avisos importantes para los estudiantes.</p>
+        <button 
+          class="mt-4 w-full py-2 px-4 bg-[#67b93e] text-white rounded-md hover:bg-[#5aa535] focus:outline-none focus:ring-2 focus:ring-[#67b93e]"
+          (click)="crearAviso()"
+        >
+          Crear Aviso
+        </button>
+      </div> -->
     </div>
   </div>
-  
+</div>

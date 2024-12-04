@@ -17,11 +17,13 @@ export const routes: Routes = [
 
   { path: 'menu', 
     component: MenuComponent , 
-    canActivate:[authGuard]},
+    // canActivate:[authGuard]
+  },
 
   { path: 'excuse', 
     component: ExcusesComponent, 
-    canActivate:[authGuard] },
+    // canActivate:[authGuard] 
+  },
 
   { path: 'layout', 
     component:LayoutComponent},
@@ -31,6 +33,7 @@ export const routes: Routes = [
 
   { path: 'admin',
     component:AdminComponent, 
-    canActivate:[authGuard]}
+    // canActivate:[authGuard]
+  }
 ];
 
