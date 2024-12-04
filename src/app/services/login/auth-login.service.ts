@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthLoginService {
   //currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   //currentUserData: BehaviorSubject<User> = new BehaviorSubject<User>(id:0, email:'');
   private loginUrl = 'http://localhost:8080/auth/login'; // Cambia esto según tu configuración
-  private tokenkey= 'authToken'
+  private tokenkey= 'authToken';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -52,10 +53,38 @@ export class AuthLoginService {
     if(!token){
       return false;
     }
+    try {
     const payload = JSON.parse(atob(token.split('.')[1]));
     const exp = payload.exp * 1000;
     return Date.now() < exp
+    }catch(error){
+    console.error('Error decodificando el token', error);
+    return false;
+    }
   }
+
+  getUserRoles(): string[] {
+    const token = this.getToken();
+    if (!token) return [];
+    try {
+      const payload = jwtDecode<any>(token);
+      const role= payload.role; //extrae el rol del sistema
+      return role ? [role]: []
+    } catch (error) {
+      console.error('Error decodificando el token', error);
+      return [];
+    }
+  }
+
+  isAdmin(): boolean {
+    return this.getUserRoles().includes('ROLE_ADMIN');
+  }
+  
+  isUser(): boolean {
+    return this.getUserRoles().includes('ROLE_USER');
+  }
+
+
 
   logout(): void{
     localStorage.removeItem(this.tokenkey);

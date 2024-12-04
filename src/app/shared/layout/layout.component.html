@@ -12,10 +12,10 @@
               <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
                 Consultar Menú 
               </a>
-              <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
+              <a *ngIf="authService.isUser()" routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
                 Registrar Excusa
               </a>
-              <a  routerLink="/admin" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
+              <a *ngIf="authService.isAdmin()"  routerLink="/admin" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] px-3 py-2 rounded-md text-sm font-medium">
                 Administrador
               </a>
             </div>
@@ -50,14 +50,14 @@
         <a routerLink="/menu" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
           Consultar Menú
         </a>
-        <a routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+        <a *ngIf="authService.isUser()" routerLink="/excuse" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
           Registrar Excusa
         </a>
-        <a routerLink="/admin" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+        <a  *ngIf="authService.isAdmin()" routerLink="/admin" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
           Administrador
         </a>
         <!-- Mostrar "Cerrar Sesión" o "Iniciar Sesión" en el menú móvil -->
-        <a *ngIf="authService.isAuthenticated()" (click)="logout()" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
+        <a  *ngIf="authService.isAuthenticated()" (click)="logout()" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">
           Cerrar Sesión
         </a>
         <a *ngIf="!authService.isAuthenticated()" routerLink="/login" routerLinkActive="bg-[#5aa535]" class="text-white hover:bg-[#5aa535] block px-3 py-2 rounded-md text-base font-medium">

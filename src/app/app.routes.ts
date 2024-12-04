@@ -7,6 +7,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AdminComponent } from './admin/admin.component';
 import { authGuard } from './guard/auth.guard';
 import { authenticatedGuard } from './guard/authenticated.guard';
+import { userGuardGuard } from './guard/user-guard.guard';
+import { adminGuardGuard } from './guard/admin-guard.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -21,7 +23,7 @@ export const routes: Routes = [
 
   { path: 'excuse', 
     component: ExcusesComponent, 
-    canActivate:[authGuard] },
+    canActivate:[authGuard,userGuardGuard] },
 
   { path: 'layout', 
     component:LayoutComponent},
@@ -31,6 +33,6 @@ export const routes: Routes = [
 
   { path: 'admin',
     component:AdminComponent, 
-    canActivate:[authGuard]}
+    canActivate:[authGuard,adminGuardGuard]}
 ];
 
